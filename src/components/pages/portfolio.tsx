@@ -1,13 +1,13 @@
 import { Stack } from '@chakra-ui/react'
 import { Footer } from '../ui/footer'
 import { Navbar } from '../ui/navbar'
-import { PortfolioContent } from '../content-loaders/portfolio-content'
+import { PortfolioProjects } from '../portfolio/portfolio-projects'
 
 export const Portfolio = () => {
   return (
     <Stack flex="1" gap="12">
       <Navbar  />
-      <PortfolioContent />
+      <PortfolioProjects />
       <Footer />
     </Stack>
   )
