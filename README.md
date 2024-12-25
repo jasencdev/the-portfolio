@@ -55,3 +55,30 @@ Initially deployed [Vite + React starter page to Netlify](https://grand-cactus-e
 CI/CD is complete with Netflify and GitHub repo integration. Pushes to main will deploy app.
 
 ## development branch
+
+`git checkout -b development`
+
+## let's start developing
+
+### installation of chakra
+
+```bash
+npm i @chakra-ui/react @emotion/react
+npx @chakra-ui/cli snippet add
+```
+
+Update `tsconfig.node.json`:
+
+```json
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+```
