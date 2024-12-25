@@ -1,5 +1,5 @@
 import { Container } from '@chakra-ui/react'
-import { Profile } from '../ui/profile'
+import { Profile } from '../about/profile'
 
 
 

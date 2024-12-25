@@ -11,7 +11,7 @@ import { ColorModeProvider } from './color-mode'
 const system = createSystem(defaultConfig, {
   globalCss: {
     body: {
-      colorPalette: 'cyan',
+      colorPalette: 'yellow',
     },
   },
   theme: {

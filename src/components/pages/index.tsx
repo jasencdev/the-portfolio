@@ -1,5 +1,5 @@
 import { Stack } from '@chakra-ui/react'
-import { IndexContent } from '../content/index-content'
+import { IndexContent } from '../content-loaders/index-content'
 import { Footer } from '../ui/footer'
 import { Navbar } from '../ui/navbar'
 

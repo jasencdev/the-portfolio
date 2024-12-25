@@ -1,5 +1,5 @@
 import { Stack } from '@chakra-ui/react'
-import { AboutContent } from '../content/about-content'
+import { AboutContent } from '../content-loaders/about-content'
 import { Footer } from '../ui/footer'
 import { Navbar } from '../ui/navbar'
 

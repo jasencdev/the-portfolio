@@ -20,7 +20,7 @@ import {
     LuStar,
     LuWallet,
   } from 'react-icons/lu'
-  import { Avatar } from './avatar'
+  import { Avatar } from '../ui/avatar'
   
   export const Profile = () => {
     return (
