@@ -1,5 +1,5 @@
 import { Stack } from '@chakra-ui/react'
-import { Content } from '../ui/content'
+import { AboutContent } from '../content/about-content'
 import { Footer } from '../ui/footer'
 import { Navbar } from '../ui/navbar'
 
@@ -7,7 +7,7 @@ export const About = () => {
   return (
     <Stack flex="1" gap="12">
       <Navbar  />
-      <Content flex="1" />
+      <AboutContent flex="1" />
       <Footer />
     </Stack>
   )

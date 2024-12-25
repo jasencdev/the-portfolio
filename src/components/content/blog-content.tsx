@@ -5,11 +5,11 @@ import {
   } from '../ui/content-placeholder'
   import { Container } from '@chakra-ui/react'
   
-  export const Content = (props: ContentPlaceholderProps) => {
+  export const BlogContent = (props: ContentPlaceholderProps) => {
     return (
       <ContentPlaceholder minH="2xl" borderYWidth="1px" {...props}>
         <Container>
-          <Label>Content</Label>
+          <Label>Blog Content</Label>
         </Container>
       </ContentPlaceholder>
     )
