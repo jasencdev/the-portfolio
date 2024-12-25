@@ -82,3 +82,15 @@ Update `tsconfig.node.json`:
   }
 }
 ```
+
+Added the provider to `main.tsx`. 
+
+Setup Vite config paths `npm i -D vite-tsconfig-paths`
+
+### install react router dom
+
+`npm install react-router-dom`
+
+and add this to app.js:
+
+`import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';`
