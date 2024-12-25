@@ -16,6 +16,7 @@ function App() {
           <Route path='/Portfolio' element={<Portfolio />} />
           <Route path='/Blog' element={<Blog />} />
           <Route path='/About' element={<About />} />
+          <Route path="/posts/:postId" element={<BlogPost />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
