@@ -1,10 +1,16 @@
-import Page from '../blocks/page';
+import { Stack } from '@chakra-ui/react'
+import { Content } from '../ui/content'
+import { Footer } from '../ui/footer'
+import { Navbar } from '../ui/navbar'
 
-export default function Index() {
+export const Index = () => {
   return (
-    <>
-        <Page />
-    </>
-    
-  );
+    <Stack flex="1" gap="12">
+      <Navbar  />
+      <Content flex="1" />
+      <Footer />
+    </Stack>
+  )
 }
+
+export default Index
