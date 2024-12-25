@@ -45,3 +45,13 @@ export default tseslint.config({
 ```
 
 - Replaced `tseslint.configs.recommended` with `tseslint.configs.strictTypeChecked`
+
+- Ran `npm run dev` and started server.
+
+## inital deploy
+
+Initially deployed [Vite + React starter page to Netlify](https://grand-cactus-e94c23.netlify.app/).
+
+CI/CD is complete with Netflify and GitHub repo integration. Pushes to main will deploy app.
+
+## development branch
