@@ -7,7 +7,7 @@ export const About = () => {
   return (
     <Stack flex="1" gap="12">
       <Navbar  />
-      <AboutContent flex="1" />
+      <AboutContent />
       <Footer />
     </Stack>
   )

@@ -7,7 +7,7 @@ export const Portfolio = () => {
   return (
     <Stack flex="1" gap="12">
       <Navbar  />
-      <PortfolioContent flex="1" />
+      <PortfolioContent />
       <Footer />
     </Stack>
   )
