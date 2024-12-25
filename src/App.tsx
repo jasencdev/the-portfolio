@@ -1,6 +1,6 @@
 import { Container } from '@chakra-ui/react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import ViteLanding from './components/ViteLanding';
+import Index from './components/pages/index';
 import './App.css'
 
 
@@ -11,10 +11,11 @@ function App() {
     <Container>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<ViteLanding />} />
+          <Route path='/' element={<Index />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
-    </ Container>
+      </Container>
   )
 }
 
