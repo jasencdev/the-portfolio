@@ -74,8 +74,7 @@ const BlogPostLoader: React.FC<BlogPostLoaderProps> = ({ filePath }) => {
             </Heading>
           </Stack>
           <Text color="fg.muted">
-            Discover the latest trends in SaaS that are shaping the future of digital solutions and
-            how your business can benefit.
+            {content}
           </Text>
         </Stack>
       </Card.Body>

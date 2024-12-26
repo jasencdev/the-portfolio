@@ -1,6 +1,5 @@
 import {
     ContentPlaceholder,
-    Label,
     type ContentPlaceholderProps,
   } from '../ui/content-placeholder'
   import { Container } from '@chakra-ui/react'
