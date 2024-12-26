@@ -11,7 +11,7 @@ import { ColorModeProvider } from './color-mode'
 const system = createSystem(defaultConfig, {
   globalCss: {
     body: {
-      colorPalette: 'yellow',
+      colorPalette: 'cyan',
     },
   },
   theme: {
@@ -22,9 +22,9 @@ const system = createSystem(defaultConfig, {
     },
     semanticTokens: {
       radii: {
-        l1: { value: '0.125rem' },
-        l2: { value: '0.25rem' },
-        l3: { value: '0.375rem' },
+        l1: { value: '0.25rem' },
+        l2: { value: '0.375rem' },
+        l3: { value: '0.5rem' },
       },
     },
   },

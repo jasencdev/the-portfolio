@@ -77,7 +77,7 @@ import {
               <HStack gap="6" textStyle="sm">
                 <HStack gap="1">
                   <LuWallet />
-                  120K USD earned
+                  140K USD Annual Salary
                 </HStack>
   
                 <HStack gap="1">
@@ -110,6 +110,32 @@ import {
               ))}
             </SimpleGrid>
           </Stack>
+
+          <Stack gap="4">
+            <Text textStyle="sm" fontWeight="semibold">
+              Languages
+            </Text>
+            <HStack wrap="wrap">
+              {data.languages.map((software) => (
+                <Badge key={software} size="lg" variant="outline" colorPalette="gray">
+                  {software}
+                </Badge>
+              ))}
+            </HStack>
+          </Stack>
+
+          <Stack gap="4">
+            <Text textStyle="sm" fontWeight="semibold">
+              Language Frameworks
+            </Text>
+            <HStack wrap="wrap">
+              {data.software_frameworks.map((software) => (
+                <Badge key={software} size="lg" variant="outline" colorPalette="gray">
+                  {software}
+                </Badge>
+              ))}
+            </HStack>
+          </Stack>
   
           <Stack gap="4">
             <Text textStyle="sm" fontWeight="semibold">
@@ -123,28 +149,78 @@ import {
               ))}
             </HStack>
           </Stack>
+
+          <Stack gap="4">
+            <Text textStyle="sm" fontWeight="semibold">
+              Data Frameworks
+            </Text>
+            <HStack wrap="wrap">
+              {data.data_frameworks.map((software) => (
+                <Badge key={software} size="lg" variant="outline" colorPalette="gray">
+                  {software}
+                </Badge>
+              ))}
+            </HStack>
+          </Stack>
+
         </Stack>
       </Container>
+
+      
     )
   }
   
   const data = {
-    name: 'Jessica D.',
-    location: 'New York, NY',
+    name: 'Jasen C.',
+    location: 'Philadelphia, PA',
     language: 'English',
-    username: 'jessx034',
+    username: 'jasencarroll',
     rating: 4.5,
-    ratingCount: 120,
+    ratingCount: 140,
     topRated: true,
-    image: 'https://i.pravatar.cc/300?u=40',
-    title: 'Product Designer & Developer',
+    image: 'https://avatars.githubusercontent.com/u/108644550?v=4',
+    title: 'Entrepreneur & Developer',
     description:
-      'Product Designer & Developer with over 8 years of experience. Leading design systems at Ipsum Technologies.',
-    skills: ['UI/UX Design', 'Frontend Development', 'User Research', 'Design Systems', 'Figma'],
+      'Mechanical Engineer, Architect, & Developer with over 10 years of experience. Leading Quality Engineering with combination products at PCI.',
+    skills: ['UI/UX Design', 'Frontend Development', 'User Requirements', 'Design Systems', 'Figma', 'Full Stack Development', 'Backend Development', 'Data Science'],
+    languages: [
+      'C++',
+      'Python',
+      'Ruby',
+      'JavaScript',
+      'TypeScript',
+      'SQL',
+      'Markdown',
+    ],
+    software_frameworks: [
+      'Flask',
+      'Django',
+      'PostgreSQL',
+      'Psychopg2',
+      'Rails',
+      'Sinatra',
+      'Jekyll',
+      'React',
+      'Chakra UI',
+      'Vite',
+      'Astro',
+      'Express',
+    ],
     softwares: [
       'Figma',
-      'Adobe Suite',
-      'Sketch',
+      'VS Code',
+      'Docker',
+      'Webflow',
+      'Zeplin',
+      'InVision',
+      'Principle',
+      'Framer',
+      'Abstract',
+    ],
+    data_frameworks: [
+      'Pandas',
+      'NumPy',
+      'Docker',
       'Webflow',
       'Zeplin',
       'InVision',

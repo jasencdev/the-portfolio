@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import grayMatter from "gray-matter";
+import { Box, Card, Heading, HStack, Stack, Text } from '@chakra-ui/react'
+import { Avatar } from '../ui/avatar'
+
 
 interface BlogPostLoaderProps {
   filePath: string; // Path to the MDX file (based on `filePath`)
@@ -59,25 +62,33 @@ const BlogPostLoader: React.FC<BlogPostLoaderProps> = ({ filePath }) => {
   }
 
   return (
-    <div>
-      <header>
-        <h1><strong>{frontmatter.title}</strong></h1>
-        <p>{frontmatter.excerpt}</p>
-        <p>
-          <strong>Category:</strong> {frontmatter.category}
-        </p>
-        <p>
-          <strong>Published:</strong> {frontmatter.publishedAt}
-        </p>
-        <p>
-          <strong>Author:</strong> {frontmatter.author.name}
-        </p>
-        <img src={frontmatter.image} alt={frontmatter.title} />
-      </header>
-      <article>
-        <p>{content}</p>
-      </article>
-    </div>
+    <Card.Root overflow="hidden" variant="elevated" boxShadow="lg">
+      <Card.Body gap={{ base: '5', md: '6' }}>
+        <Stack gap="3" flex="1">
+          <Stack>
+            <Text textStyle="sm" fontWeight="medium" color="colorPalette.fg">
+              {frontmatter?.category}
+            </Text>
+            <Heading textStyle="2xl">
+              {frontmatter.title}
+            </Heading>
+          </Stack>
+          <Text color="fg.muted">
+            Discover the latest trends in SaaS that are shaping the future of digital solutions and
+            how your business can benefit.
+          </Text>
+        </Stack>
+      </Card.Body>
+      <Card.Footer>
+        <HStack gap="3">
+          <Avatar src="https://avatars.githubusercontent.com/u/108644550?v=4" />
+          <Box textStyle="sm">
+            <Text fontWeight="medium">{frontmatter.author.name}</Text>
+            <Text color="fg.muted">January 15, {new Date().getFullYear()}</Text>
+          </Box>
+        </HStack>
+      </Card.Footer>
+    </Card.Root> 
   );
 };
 
