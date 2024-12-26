@@ -1,4 +1,4 @@
-import { AspectRatio, Box, Heading, HStack, Stack, Text } from '@chakra-ui/react'
+import { AspectRatio, Box, Heading, HStack, Stack, Text, Link } from '@chakra-ui/react'
 import { ImagePlaceholder } from './image-placeholder'
 import { Avatar } from '../ui/avatar'
 import type { Post } from '../portfolio/data-portfolio'
@@ -20,7 +20,11 @@ export const ArticlePreview = (props: Props) => {
           <Text textStyle="sm" fontWeight="medium" color="colorPalette.fg">
             {post.category}
           </Text>
-          <Heading textStyle={{ base: '2xl', md: hero ? '4xl' : '2xl' }}>{post.title}</Heading>
+          <Link href={`/Portfolio/${post.id}`}>
+            <Heading textStyle={{ base: '2xl', md: hero ? '4xl' : '2xl' }}>
+              {post.title}
+            </Heading>
+            </Link>
         </Stack>
         <Text color="fg.muted" textStyle={{ base: 'md', md: hero ? 'lg' : 'md' }}>
           {post.excerpt}

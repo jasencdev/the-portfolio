@@ -4,6 +4,7 @@ import {
   Card,
   Container,
   Heading,
+  Link,
   HStack,
   SimpleGrid,
   Span,
@@ -25,7 +26,9 @@ export const BlogBlock = () => {
                   {post.publishedAt}
                 </Span>
                 <Heading as="h3" size="2xl">
-                  {post.title}
+                  <Link href={`/Blog/${post.id}`}>
+                    {post.title}
+                  </Link>
                 </Heading>
                 <Text>{post.excerpt}</Text>
               </Card.Body>
