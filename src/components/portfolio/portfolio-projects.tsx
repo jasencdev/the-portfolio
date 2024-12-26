@@ -71,7 +71,7 @@ export const PortfolioProjects = () => {
                 fontWeight="medium"
                 color="colorPalette.contrast/90"
               >
-                Blog
+                Portfolio
               </Text>
               <Heading as="h1" textStyle={{ base: '4xl', md: '5xl' }} color="colorPalette.contrast">
                 Latest Insights

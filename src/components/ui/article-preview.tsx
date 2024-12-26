@@ -1,42 +1,35 @@
-import { AspectRatio, Box, Heading, HStack, Stack, Text, Link } from '@chakra-ui/react'
-import { ImagePlaceholder } from './image-placeholder'
-import { Avatar } from '../ui/avatar'
-import type { Post } from '../portfolio/data-portfolio'
+import { Box, Card, Heading, HStack, Link, Stack, Text } from '@chakra-ui/react'
+import { Avatar } from './avatar'
+import type { Project } from '../utils/content'
 
-interface Props {
-  post: Post
-  hero?: boolean
+interface ArticlePreviewProps {
+  post: Project
 }
 
-export const ArticlePreview = (props: Props) => {
-  const { post, hero } = props
+export const ArticlePreview = (props: ArticlePreviewProps) => {
+  const { post } = props
   return (
-    <Stack gap={{ base: '5', md: '6' }} align="start">
-      <AspectRatio ratio={16 / 9} w="full" maxH="md">
-        <ImagePlaceholder />
-      </AspectRatio>
-      <Stack gap="3" flex="1">
-        <Stack>
-          <Text textStyle="sm" fontWeight="medium" color="colorPalette.fg">
-            {post.category}
-          </Text>
-          <Link href={`/Portfolio/${post.id}`}>
-            <Heading textStyle={{ base: '2xl', md: hero ? '4xl' : '2xl' }}>
-              {post.title}
-            </Heading>
-            </Link>
-        </Stack>
-        <Text color="fg.muted" textStyle={{ base: 'md', md: hero ? 'lg' : 'md' }}>
-          {post.excerpt}
+    <Card.Root as="article" size="lg" rounded="xl">
+      <Card.Body gap="3">
+        <Text textStyle="sm" color="fg.muted" textTransform="uppercase">
+          {post.publishedAt}
         </Text>
-      </Stack>
-      <HStack gap="3">
-        <Avatar src={post.author.avatarUrl} boxSize="10" />
-        <Box textStyle="sm">
-          <Text fontWeight="medium">{post.author.name}</Text>
-          <Text color="fg.muted">{post.publishedAt}</Text>
-        </Box>
-      </HStack>
-    </Stack>
+        <Heading as="h3" size="2xl">
+          <Link href={`/portfolio/${post.id}`}>{post.title}</Link>
+        </Heading>
+        <Text>{post.excerpt}</Text>
+      </Card.Body>
+      <Card.Footer>
+        <HStack gap="4">
+          <Avatar shape="rounded" src={post.author.avatarUrl} name={post.author.name} />
+          <Stack gap="0">
+            <Box fontWeight="medium">{post.author.name}</Box>
+            <Box textStyle="sm" color="fg.muted">
+              {post.readTime} read
+            </Box>
+          </Stack>
+        </HStack>
+      </Card.Footer>
+    </Card.Root>
   )
 }
