@@ -4,6 +4,8 @@ import Index from './components/pages/index';
 import Portfolio from './components/pages/portfolio';
 import Blog from './components/pages/blog';
 import About from './components/pages/about';
+import Posts from './components/pages/posts';
+
 import './App.css'
 
 
@@ -16,7 +18,7 @@ function App() {
           <Route path='/Portfolio' element={<Portfolio />} />
           <Route path='/Blog' element={<Blog />} />
           <Route path='/About' element={<About />} />
-          <Route path="/posts/:postId" element={<BlogPost />} />
+          <Route path="/Blog/:postId" element={<Posts />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
