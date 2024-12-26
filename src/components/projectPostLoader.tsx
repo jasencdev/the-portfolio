@@ -43,7 +43,7 @@ const ProjectPostLoader: React.FC<ProjectPostLoaderProps> = ({ filePath }) => {
         console.log('Available MDX files:', Object.keys(mdxFiles));
 
         // Construct the correct path
-        const expectedPath = `/public/projects/example${filePath}.mdx`;
+        const expectedPath = `/public/projects/${filePath}.mdx`;
         console.log('Expected path:', expectedPath);
 
         // Check if the file exists in our glob
