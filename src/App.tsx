@@ -22,7 +22,7 @@ function App() {
           <Route path='/About' element={<About />} />
           <Route path="/Blog/:postId" element={<Posts />} />
           <Route path="/Portfolio/:postId" element={<Projects />} />
-          <Route path="*" element={<Navigate to="/" />} />
+          
         </Routes>
       </BrowserRouter>
       </Container>

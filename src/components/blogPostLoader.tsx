@@ -2,14 +2,12 @@ import React, { useEffect, useState } from "react";
 import grayMatter from "gray-matter";
 import { Box, Card, Heading, HStack, Stack, Text } from '@chakra-ui/react';
 import { Avatar } from './ui/avatar';
-
-// Import remark packages
 import { remark } from 'remark';
 import remarkHtml from 'remark-html';
 import remarkGfm from 'remark-gfm';
 
 interface BlogPostLoaderProps {
-  filePath: string; // Path to the MDX file (based on `filePath`)
+  filePath: string; // This will be the post ID
 }
 
 interface Frontmatter {
@@ -26,55 +24,65 @@ interface Frontmatter {
   };
 }
 
-// Static map of MDX imports
-const posts: Record<string, () => Promise<{ default: string }>> = {
-  "1": () => import("/public/posts/example1.mdx?raw"),
-  "2": () => import("/public/posts/example2.mdx?raw"),
-  "3": () => import("/public/posts/example3.mdx?raw"),
-  "4": () => import("/public/posts/example4.mdx?raw"),
-  "5": () => import("/public/posts/example5.mdx?raw"),
-};
-
 const BlogPostLoader: React.FC<BlogPostLoaderProps> = ({ filePath }) => {
   const [frontmatter, setFrontmatter] = useState<Frontmatter | null>(null);
   const [content, setContent] = useState<string | null>(null);
 
   useEffect(() => {
-    // Function to dynamically load the MDX file, parse its frontmatter, and convert to HTML
-    async function fetchAndParseMarkdown() {
+    async function loadContent() {
       try {
-        // 1. Get the correct import function based on the filePath
-        const loadFn = posts[filePath];
-        if (!loadFn) {
-          throw new Error(`Post with filePath '${filePath}' not found`);
+        // Remove 'example' from the filePath if it's already there
+        const cleanFilePath = filePath.replace('example', '');
+        console.log('Looking for file with ID:', cleanFilePath);
+
+        const mdxFiles = import.meta.glob<string>('/public/posts/*.mdx', { 
+          as: 'raw',
+          eager: false 
+        });
+
+        // Log available files
+        console.log('Available MDX files:', Object.keys(mdxFiles));
+
+        // Construct the correct path
+        const expectedPath = `/public/posts/example${cleanFilePath}.mdx`;
+        console.log('Expected path:', expectedPath);
+
+        // Check if the file exists in our glob
+        if (!mdxFiles[expectedPath]) {
+          throw new Error(`Blog post file not found at path: ${expectedPath}`);
         }
 
-        // 2. Dynamically import the raw MDX content
-        const rawMdx = await loadFn(); 
-        // rawMdx.default is the raw string content of your .mdx file
+        // Load the content
+        const rawContent = await mdxFiles[expectedPath]();
+        
+        // Log successful content load
+        console.log('Content loaded successfully');
 
-        // 3. Extract frontmatter (YAML) and the raw Markdown body using gray-matter
-        const { data, content: mdContent } = grayMatter(rawMdx.default);
+        // Parse frontmatter and content
+        const { data, content: mdContent } = grayMatter(rawContent);
 
-        // 4. Convert the Markdown body to HTML using remark
+        // Process markdown content
         const processed = await remark()
           .use(remarkGfm)
           .use(remarkHtml)
           .process(mdContent);
-        const html = processed.toString();
 
-        // 5. Update the component state with the results
         setFrontmatter(data as Frontmatter);
-        setContent(html);
-      } catch (err) {
-        console.error('Error fetching or parsing Markdown:', err);
+        setContent(processed.toString());
+
+      } catch (error) {
+        console.error("Error loading blog post:", error);
+        // Log more details about the error
+        if (error instanceof Error) {
+          console.error("Error details:", error.message);
+          console.error("Error stack:", error.stack);
+        }
       }
     }
 
-    fetchAndParseMarkdown();
+    loadContent();
   }, [filePath]);
 
-  // If either the frontmatter or content isn't loaded yet, we show a fallback
   if (!frontmatter || !content) {
     return <div>Loading...</div>;
   }
@@ -91,11 +99,6 @@ const BlogPostLoader: React.FC<BlogPostLoaderProps> = ({ filePath }) => {
               {frontmatter.title}
             </Heading>
           </Stack>
-          {/* 
-            Insert the parsed HTML. 
-            Using dangerouslySetInnerHTML so it renders HTML 
-            instead of displaying the markup literally.
-          */}
           <Box
             color="fg.muted"
             dangerouslySetInnerHTML={{ __html: content }}
@@ -107,7 +110,6 @@ const BlogPostLoader: React.FC<BlogPostLoaderProps> = ({ filePath }) => {
           <Avatar src={frontmatter.author.avatarUrl} />
           <Box textStyle="sm">
             <Text fontWeight="medium">{frontmatter.author.name}</Text>
-            {/* Show your frontmatter date or any custom formatting */}
             <Text color="fg.muted">{frontmatter.publishedAt}</Text>
           </Box>
         </HStack>
