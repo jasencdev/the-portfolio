@@ -32,8 +32,7 @@ const ProjectPostLoader: React.FC<ProjectPostLoaderProps> = ({ filePath }) => {
     async function loadContent() {
       try {
         // Remove 'example' from the filePath if it's already there
-        const cleanFilePath = filePath.replace('example', '');
-        console.log('Looking for file with ID:', cleanFilePath);
+        console.log('Looking for file with ID:', filePath);
 
         const mdxFiles = import.meta.glob<string>('/public/projects/*.mdx', { 
           as: 'raw',
@@ -44,7 +43,7 @@ const ProjectPostLoader: React.FC<ProjectPostLoaderProps> = ({ filePath }) => {
         console.log('Available MDX files:', Object.keys(mdxFiles));
 
         // Construct the correct path
-        const expectedPath = `/public/projects/example${cleanFilePath}.mdx`;
+        const expectedPath = `/public/projects/example${filePath}.mdx`;
         console.log('Expected path:', expectedPath);
 
         // Check if the file exists in our glob

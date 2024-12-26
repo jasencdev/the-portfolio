@@ -94,3 +94,16 @@ Setup Vite config paths `npm i -D vite-tsconfig-paths`
 and add this to app.js:
 
 `import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';`
+
+## That was fun
+
+But when times get tough, it's time to work on the README.
+
+## Issues
+
+- Portfolio site is not generating the right links.
+- Portfolio site is still relying on `data-portfolio.ts`
+- i'm not sure if `string-utils.ts` is being used.
+- i need to refactor
+- need to fix the capitalization in the routes
+- that weird ref on an SVG error
