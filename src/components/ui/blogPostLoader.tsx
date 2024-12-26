@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import grayMatter from "gray-matter";
-import { Box, Card, Heading, HStack, Stack, Text } from '@chakra-ui/react'
-import { Avatar } from '../ui/avatar'
+import { Box, Card, Heading, HStack, Stack, Text } from '@chakra-ui/react';
+import { Avatar } from '../ui/avatar';
 
+// Import remark packages
+import { remark } from 'remark';
+import remarkHtml from 'remark-html';
+import remarkGfm from 'remark-gfm';
 
 interface BlogPostLoaderProps {
   filePath: string; // Path to the MDX file (based on `filePath`)
@@ -24,8 +28,9 @@ interface Frontmatter {
 
 // Static map of MDX imports
 const posts: Record<string, () => Promise<{ default: string }>> = {
-  "1": () => import("../../posts/1.mdx?raw"),
-  // Add more posts as needed
+  "1": () => import("/public/posts/1.mdx?raw"),
+  // Add more posts as needed, for example:
+  // "2": () => import("../../../public/posts/2.mdx?raw"),
 };
 
 const BlogPostLoader: React.FC<BlogPostLoaderProps> = ({ filePath }) => {
@@ -33,30 +38,41 @@ const BlogPostLoader: React.FC<BlogPostLoaderProps> = ({ filePath }) => {
   const [content, setContent] = useState<string | null>(null);
 
   useEffect(() => {
-    const loadPost = async () => {
-      const loadFn = posts[filePath];
-      if (!loadFn) {
-        console.error(`Post with filePath '${filePath}' not found`);
-        return;
-      }
-
+    // Function to dynamically load the MDX file, parse its frontmatter, and convert to HTML
+    async function fetchAndParseMarkdown() {
       try {
-        // Load the raw MDX content
-        const rawMdx = await loadFn();
+        // 1. Get the correct import function based on the filePath
+        const loadFn = posts[filePath];
+        if (!loadFn) {
+          throw new Error(`Post with filePath '${filePath}' not found`);
+        }
 
-        // Parse the frontmatter and content using gray-matter
-        const { data, content } = grayMatter(rawMdx.default);
+        // 2. Dynamically import the raw MDX content
+        const rawMdx = await loadFn(); 
+        // rawMdx.default is the raw string content of your .mdx file
 
+        // 3. Extract frontmatter (YAML) and the raw Markdown body using gray-matter
+        const { data, content: mdContent } = grayMatter(rawMdx.default);
+
+        // 4. Convert the Markdown body to HTML using remark
+        const processed = await remark()
+          .use(remarkGfm)
+          .use(remarkHtml)
+          .process(mdContent);
+        const html = processed.toString();
+
+        // 5. Update the component state with the results
         setFrontmatter(data as Frontmatter);
-        setContent(content);
-      } catch (error) {
-        console.error(`Failed to load post "${filePath}":`, error);
+        setContent(html);
+      } catch (err) {
+        console.error('Error fetching or parsing Markdown:', err);
       }
-    };
+    }
 
-    loadPost();
+    fetchAndParseMarkdown();
   }, [filePath]);
 
+  // If either the frontmatter or content isn't loaded yet, we show a fallback
   if (!frontmatter || !content) {
     return <div>Loading...</div>;
   }
@@ -67,27 +83,34 @@ const BlogPostLoader: React.FC<BlogPostLoaderProps> = ({ filePath }) => {
         <Stack gap="3" flex="1">
           <Stack>
             <Text textStyle="sm" fontWeight="medium" color="colorPalette.fg">
-              {frontmatter?.category}
+              {frontmatter.category}
             </Text>
             <Heading textStyle="2xl">
               {frontmatter.title}
             </Heading>
           </Stack>
-          <Text color="fg.muted">
-            {content}
-          </Text>
+          {/* 
+            Insert the parsed HTML. 
+            Using dangerouslySetInnerHTML so it renders HTML 
+            instead of displaying the markup literally.
+          */}
+          <Box
+            color="fg.muted"
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
         </Stack>
       </Card.Body>
       <Card.Footer>
         <HStack gap="3">
-          <Avatar src="https://avatars.githubusercontent.com/u/108644550?v=4" />
+          <Avatar src={frontmatter.author.avatarUrl} />
           <Box textStyle="sm">
             <Text fontWeight="medium">{frontmatter.author.name}</Text>
-            <Text color="fg.muted">January 15, {new Date().getFullYear()}</Text>
+            {/* Show your frontmatter date or any custom formatting */}
+            <Text color="fg.muted">{frontmatter.publishedAt}</Text>
           </Box>
         </HStack>
       </Card.Footer>
-    </Card.Root> 
+    </Card.Root>
   );
 };
 
