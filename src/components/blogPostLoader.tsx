@@ -32,8 +32,7 @@ const BlogPostLoader: React.FC<BlogPostLoaderProps> = ({ filePath }) => {
     async function loadContent() {
       try {
         // Remove 'example' from the filePath if it's already there
-        const cleanFilePath = filePath.replace('example', '');
-        console.log('Looking for file with ID:', cleanFilePath);
+        console.log('Looking for file with ID:', filePath);
 
         const mdxFiles = import.meta.glob<string>('/public/posts/*.mdx', { 
           as: 'raw',
@@ -44,7 +43,7 @@ const BlogPostLoader: React.FC<BlogPostLoaderProps> = ({ filePath }) => {
         console.log('Available MDX files:', Object.keys(mdxFiles));
 
         // Construct the correct path
-        const expectedPath = `/public/posts/example${cleanFilePath}.mdx`;
+        const expectedPath = `/public/posts/${filePath}.mdx`;
         console.log('Expected path:', expectedPath);
 
         // Check if the file exists in our glob

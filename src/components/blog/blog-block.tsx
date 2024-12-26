@@ -44,7 +44,8 @@ export const BlogBlock = () => {
           Object.entries(mdxFiles).map(async ([path, loader]) => {
             const content = await loader()
             const { data } = grayMatter(content)
-            return data as Post
+            const id = path.split('/').pop()?.replace('.mdx', '') || ''
+            return { ...data, id } as Post
           })
         )
 
