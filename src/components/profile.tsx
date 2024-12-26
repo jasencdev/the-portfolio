@@ -18,7 +18,6 @@ import {
     LuMedal,
     LuMessageCircle,
     LuStar,
-    LuWallet,
   } from 'react-icons/lu'
   import { Avatar } from './ui/avatar'
   
@@ -75,11 +74,6 @@ import {
               <Text color="fg.muted">{data.title}</Text>
   
               <HStack gap="6" textStyle="sm">
-                <HStack gap="1">
-                  <LuWallet />
-                  140K USD Annual Salary
-                </HStack>
-  
                 <HStack gap="1">
                   <LuMessageCircle />
                   {data.language}
