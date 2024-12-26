@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import grayMatter from "gray-matter";
 import { Box, Card, Heading, HStack, Stack, Text } from '@chakra-ui/react';
-import { Avatar } from '../ui/avatar';
+import { Avatar } from './ui/avatar';
 
 // Import remark packages
 import { remark } from 'remark';
@@ -28,9 +28,11 @@ interface Frontmatter {
 
 // Static map of MDX imports
 const posts: Record<string, () => Promise<{ default: string }>> = {
-  "1": () => import("/public/posts/1.mdx?raw"),
-  // Add more posts as needed, for example:
-  // "2": () => import("../../../public/posts/2.mdx?raw"),
+  "1": () => import("/public/posts/example1.mdx?raw"),
+  "2": () => import("/public/posts/example2.mdx?raw"),
+  "3": () => import("/public/posts/example3.mdx?raw"),
+  "4": () => import("/public/posts/example4.mdx?raw"),
+  "5": () => import("/public/posts/example5.mdx?raw"),
 };
 
 const BlogPostLoader: React.FC<BlogPostLoaderProps> = ({ filePath }) => {
@@ -82,10 +84,10 @@ const BlogPostLoader: React.FC<BlogPostLoaderProps> = ({ filePath }) => {
       <Card.Body gap={{ base: '5', md: '6' }}>
         <Stack gap="3" flex="1">
           <Stack>
-            <Text textStyle="sm" fontWeight="medium" color="colorPalette.fg">
+            <Text textStyle="md" fontWeight="medium" color="colorPalette.fg">
               {frontmatter.category}
             </Text>
-            <Heading textStyle="2xl">
+            <Heading as="h1">
               {frontmatter.title}
             </Heading>
           </Stack>
