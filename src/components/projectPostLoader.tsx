@@ -35,7 +35,8 @@ const ProjectPostLoader: React.FC<ProjectPostLoaderProps> = ({ filePath }) => {
         console.log('Looking for file with ID:', filePath);
 
         const mdxFiles = import.meta.glob<string>('/public/projects/*.mdx', { 
-          as: 'raw',
+          query: '?raw',
+          import: 'default',
           eager: false 
         });
 
