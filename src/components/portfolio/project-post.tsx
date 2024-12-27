@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import ProjectPostLoader from '../portfolio/projectPostLoader';
+import ProjectPostLoader from './projectPostLoader';
 
 
 const ProjectPost: React.FC = () => {
@@ -14,7 +14,7 @@ const ProjectPost: React.FC = () => {
 
   return (
     <div>
-      <ProjectPostLoader filePath={postId} />
+      <ProjectPostLoader filePath={postId} basePath='projects'/>
     </div>
   );
 };

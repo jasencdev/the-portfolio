@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import BlogPostLoader from '../blog/blogPostLoader';
+import BlogPostLoader from './blogPostLoader';
 
 const BlogPost: React.FC = () => {
   // useParams returns a generic Record<string, string | undefined>

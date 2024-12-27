@@ -5,7 +5,7 @@ import { loadContent, Frontmatter } from "../../utils/project-loader";
 
 interface ProjectPostLoaderProps {
   filePath: string; // This will be the post ID
-  basePath: string; // This determines the folder to look in (e.g., 'posts' or 'projects')
+  basePath: 'projects'; // This determines the folder to look in (e.g., 'posts' or 'projects')
 }
 
 const ProjectPostLoader: React.FC<ProjectPostLoaderProps> = ({ filePath }) => {
