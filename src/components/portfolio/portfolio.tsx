@@ -1,7 +1,7 @@
 import { Stack } from '@chakra-ui/react'
 import { Footer } from '../ui/footer'
 import { Navbar } from '../ui/navbar'
-import { PortfolioProjects } from '../portfolio/portfolio-projects'
+import { PortfolioProjects } from './portfolio-projects'
 
 export const Portfolio = () => {
   return (
