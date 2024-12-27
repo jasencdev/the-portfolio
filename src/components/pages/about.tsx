@@ -1,5 +1,5 @@
 import { Stack } from '@chakra-ui/react'
-import { Profile } from '../profile'
+import { Profile } from '../about/profile'
 import { Footer } from '../ui/footer'
 import { Navbar } from '../ui/navbar'
 

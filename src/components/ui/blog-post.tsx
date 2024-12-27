@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import BlogPostLoader from '../blogPostLoader';
+import BlogPostLoader from '../blog/blogPostLoader';
 
 const BlogPost: React.FC = () => {
   // useParams returns a generic Record<string, string | undefined>
@@ -13,7 +13,7 @@ const BlogPost: React.FC = () => {
 
   return (
     <div>
-      <BlogPostLoader filePath={postId} />
+      <BlogPostLoader filePath={postId} basePath='/posts/'/>
     </div>
   );
 };

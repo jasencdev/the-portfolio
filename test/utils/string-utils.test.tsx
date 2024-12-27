@@ -1,5 +1,5 @@
 // test/string-utils.test.ts
-import { createSlug, getFileNameFromPath } from '../../src/components/utils/string-utils';
+import { createSlug, getFileNameFromPath } from '../../src/utils/string-utils';
 
 describe('string-utils', () => {
   describe('createSlug', () => {

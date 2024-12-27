@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import ProjectPostLoader from '../projectPostLoader';
+import ProjectPostLoader from '../portfolio/projectPostLoader';
 
 
 const ProjectPost: React.FC = () => {

@@ -19,7 +19,7 @@ import {
     LuMessageCircle,
     LuStar,
   } from 'react-icons/lu'
-  import { Avatar } from './ui/avatar'
+  import { Avatar } from '../ui/avatar'
   
   export const Profile = () => {
     return (
