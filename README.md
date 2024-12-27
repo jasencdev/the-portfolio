@@ -107,3 +107,63 @@ But when times get tough, it's time to work on the README.
 - i need to refactor
 - need to fix the capitalization in the routes
 - that weird ref on an SVG error
+
+## Keeping Track of Dependencies & Their Why
+
+```json
+{
+  "name": "the-portfolio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "test": "jest",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@chakra-ui/react": 
+    "@emotion/react": 
+    "@emotion/styled": 
+    "buffer": 
+    "eslint-plugin-react": 
+    "framer-motion": 
+    "gray-matter": 
+    "next-themes": 
+    "react": 
+    "react-dom": 
+    "react-icons": 
+    "react-router-dom": 
+    "remark": 
+    "remark-gfm": 
+    "remark-html": 
+    "remark-parse": 
+  },
+  "devDependencies": {
+    "@babel/preset-env": 
+    "@babel/preset-react": 
+    "@babel/preset-typescript": 
+    "@eslint/js": 
+    "@testing-library/jest-dom": 
+    "@testing-library/react": 
+    "@types/jest": 
+    "@types/react": 
+    "@types/react-dom":
+    "@vitejs/plugin-react": 
+    "babel-jest": 
+    "eslint": 
+    "eslint-plugin-react-hooks": 
+    "eslint-plugin-react-refresh": 
+    "globals": 
+    "jest": 
+    "jest-environment-jsdom": 
+    "ts-jest": 
+    "typescript": 
+    "typescript-eslint": 
+    "vite": 
+    "vite-tsconfig-paths": 
+  }
+}
+```
