@@ -1,9 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import ProjectPostLoader from '../projectPostLoader';
+import BlogPostLoader from './blogPostLoader';
 
-
-const ProjectPost: React.FC = () => {
+const BlogPost: React.FC = () => {
   // useParams returns a generic Record<string, string | undefined>
   const { postId } = useParams<Record<string, string>>();
 
@@ -14,9 +13,9 @@ const ProjectPost: React.FC = () => {
 
   return (
     <div>
-      <ProjectPostLoader filePath={postId} />
+      <BlogPostLoader filePath={postId} basePath='/posts/'/>
     </div>
   );
 };
 
-export default ProjectPost;
+export default BlogPost;

@@ -1,0 +1,8 @@
+# Allow all crawlers
+User-agent: *
+Disallow:
+
+# Block specific areas (optional)
+Disallow: /admin/
+Disallow: /secret-projects/
+

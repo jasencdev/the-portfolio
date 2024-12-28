@@ -1,16 +1,18 @@
 import { Stack } from '@chakra-ui/react'
-import { BlogBlock } from '../blog/blog-block'
 import { Footer } from '../ui/footer'
 import { Navbar } from '../ui/navbar'
+import BlogPost from './blog-post'
+import { BlogHeaderBlock } from './blog-header-block'
 
-export const Blog = () => {
+export const Posts = () => {
   return (
     <Stack flex="1" gap="12">
       <Navbar  />
-      <BlogBlock />
+      <BlogHeaderBlock />
+      <BlogPost />
       <Footer />
     </Stack>
   )
 }
 
-export default Blog
+export default Posts

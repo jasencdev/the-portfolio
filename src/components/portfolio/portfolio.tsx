@@ -1,16 +1,16 @@
 import { Stack } from '@chakra-ui/react'
-import { Profile } from '../profile'
 import { Footer } from '../ui/footer'
 import { Navbar } from '../ui/navbar'
+import { PortfolioProjects } from './portfolio-projects'
 
-export const About = () => {
+export const Portfolio = () => {
   return (
     <Stack flex="1" gap="12">
       <Navbar  />
-      <Profile />
+      <PortfolioProjects />
       <Footer />
     </Stack>
   )
 }
 
-export default About
+export default Portfolio
