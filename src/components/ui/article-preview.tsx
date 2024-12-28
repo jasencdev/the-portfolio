@@ -1,6 +1,6 @@
 import { Box, Card, Heading, HStack, Link, Stack, Text } from '@chakra-ui/react'
 import { Avatar } from './avatar'
-import type { Project } from '../utils/content'
+import type { Project } from '../../utils/content'
 
 interface ArticlePreviewProps {
   post: Project
