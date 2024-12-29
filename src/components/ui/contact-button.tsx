@@ -30,33 +30,42 @@ export const ContactBlock = () => {
     }));
   };
 
-interface FormEvent extends React.FormEvent<HTMLFormElement> {
-    target: HTMLFormElement & {
-        elements: {
-            name: HTMLInputElement;
-            email: HTMLInputElement;
-            message: HTMLTextAreaElement;
-        };
-    };
+
+interface FormData {
+    name: string;
+    email: string;
+    message: string;
 }
 
-const handleSubmit = (event: FormEvent) => {
-    event.preventDefault(); // Prevent default form submission
+const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
-    const form = event.target;
+    const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
 
-    fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(
-            Object.fromEntries(
-                Array.from(formData.entries()).map(([key, value]) => [key, value as string])
-            )
-        ).toString(),
-    })
-        .then(() => console.log("Form successfully submitted"))
-        .catch((error) => alert(error));
+    const data: FormData = {
+        name: formData.get('name') as string,
+        email: formData.get('email') as string,
+        message: formData.get('message') as string,
+    };
+
+    try {
+        const response = await fetch('/.netlify/functions/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+            console.log('Email sent successfully');
+        } else {
+            console.error('Error sending email:', await response.json());
+        }
+    } catch (error) {
+        console.error('Network error:', error);
+    }
 };
 
   return (
