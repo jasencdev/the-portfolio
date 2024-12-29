@@ -17,8 +17,8 @@ export const HeroBlock = () => (
             Now Available
           </Badge>
         }
-        headline="Build Powerful Digital Solutions"
-        description="Transform your ideas into reality with our cutting-edge tools and features. Create seamless, professional experiences that drive results."
+        headline="Full Stack Solutions. Built."
+        description="Have your ideas turned into reality with cutting-edge tools and custom features. Create seamless business processes that drive results."
         justifyContent="center"
       >
         <Stack direction={{ base: 'column', md: 'row' }} gap="3">
