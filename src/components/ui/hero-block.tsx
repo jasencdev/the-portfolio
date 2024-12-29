@@ -1,8 +1,9 @@
-import { AspectRatio, Badge, Container, Icon, SimpleGrid, Stack } from '@chakra-ui/react'
+import { AspectRatio, Badge, Container, Icon, SimpleGrid, Stack, Link } from '@chakra-ui/react'
 import { LuRocket } from 'react-icons/lu'
 import { HeroHeader } from './hero-header'
 import { ImagePlaceholder } from './image-placeholder'
 import { Button } from './button'
+import { GetStartedBlock } from './get-started'
 
 export const HeroBlock = () => (
   <Container py={{ base: '16', md: '24' }}>
@@ -21,10 +22,12 @@ export const HeroBlock = () => (
         justifyContent="center"
       >
         <Stack direction={{ base: 'column', md: 'row' }} gap="3">
-          <Button size={{ base: 'lg', md: '2xl' }}>Get Started</Button>
-          <Button variant="outline" size={{ base: 'lg', md: '2xl' }} colorPalette="gray">
-            Learn more
-          </Button>
+          <GetStartedBlock />
+          <Link href="/portfolio/" >
+            <Button variant="outline" size={{ base: 'lg', md: '2xl' }} colorPalette="gray">
+              Learn more
+            </Button>
+          </Link>
         </Stack>
       </HeroHeader>
       <AspectRatio ratio={1}>
