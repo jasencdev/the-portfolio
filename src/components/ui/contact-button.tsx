@@ -30,6 +30,35 @@ export const ContactBlock = () => {
     }));
   };
 
+interface FormEvent extends React.FormEvent<HTMLFormElement> {
+    target: HTMLFormElement & {
+        elements: {
+            name: HTMLInputElement;
+            email: HTMLInputElement;
+            message: HTMLTextAreaElement;
+        };
+    };
+}
+
+const handleSubmit = (event: FormEvent) => {
+    event.preventDefault(); // Prevent default form submission
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(
+            Object.fromEntries(
+                Array.from(formData.entries()).map(([key, value]) => [key, value as string])
+            )
+        ).toString(),
+    })
+        .then(() => console.log("Form successfully submitted"))
+        .catch((error) => alert(error));
+};
+
   return (
     <DialogRoot placement="center" size={{ base: 'cover', md: 'sm' }}>
       <DialogTrigger asChild>
@@ -49,9 +78,10 @@ export const ContactBlock = () => {
         <DialogBody px="6">
           {/* Ensure proper form setup */}
           <form
-            name="contact" // Form name for Netlify
-            method="POST"
             data-netlify="true"
+            name="contact" // Form name for Netlify
+            method="post"
+            onSubmit={handleSubmit}
             netlify-honeypot="bot-field" // Anti-spam honeypot
           >
             {/* Hidden input to store form name */}
