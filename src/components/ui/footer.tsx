@@ -1,5 +1,5 @@
 import { Container, HStack, Icon, Link, Separator, Stack } from '@chakra-ui/react'
-import { SiFacebook, SiGithub, SiInstagram, SiLinkedin, SiX } from 'react-icons/si'
+import { SiGithub } from 'react-icons/si'
 import { Logo } from './logo'
 
 export const Footer = () => (
@@ -11,9 +11,9 @@ export const Footer = () => (
       direction={{ base: 'column', md: 'row' }}
       py={{ base: '12', md: '16' }}
     >
-      <Logo height="32" />
+      <Logo />
       <Stack gap="6" direction={{ base: 'column', md: 'row' }}>
-        {['Main', 'Portfolio', 'Blog', 'About'].map((link, idx) => (
+        {['Portfolio', 'Blog', 'About'].map((link, idx) => (
           <Link key={idx} href={link} colorPalette="gray">
             {link}
           </Link>
@@ -46,9 +46,5 @@ export const Footer = () => (
 )
 
 const socialLinks = [
-  { href: 'https://facebook.com', icon: <SiFacebook /> },
-  { href: 'https://www.instagram.com', icon: <SiInstagram /> },
-  { href: 'https://www.linkedin.com', icon: <SiLinkedin /> },
-  { href: 'https://github.com', icon: <SiGithub /> },
-  { href: 'https://x.com', icon: <SiX /> },
+  { href: 'https://github.com/jasencdev', icon: <SiGithub /> },
 ]

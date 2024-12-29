@@ -4,7 +4,7 @@ export const Logo = () => (
     <Link href='/'>
       <Image 
         height="60px"
-        src="./assets/logo/svg/color-logo-with-background.svg" 
+        src="/assets/color-logo-with-background.png" 
         alt="jasenc.dev"
         rounded="lg"
         />
