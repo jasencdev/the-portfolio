@@ -17,14 +17,14 @@ const system = createSystem(defaultConfig, {
   theme: {
     tokens: {
       fonts: {
-        body: { value: 'var(--font-geist)' },
+        body: { value: 'var(--font-bricolage-grotesque)' },
       },
     },
     semanticTokens: {
       radii: {
-        l1: { value: '0.25rem' },
-        l2: { value: '0.375rem' },
-        l3: { value: '0.5rem' },
+        l1: { value: '0.375rem' },
+        l2: { value: '0.5rem' },
+        l3: { value: '0.75rem' },
       },
     },
   },

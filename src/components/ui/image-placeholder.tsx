@@ -1,8 +1,7 @@
-import { Center, type CenterProps } from '@chakra-ui/react'
-import { LuImage } from 'react-icons/lu'
+import { Center, type CenterProps, Image } from '@chakra-ui/react'
 
 export const ImagePlaceholder = (props: CenterProps) => (
   <Center w="full" h="full" bg="bg.muted" color="fg.subtle" {...props}>
-    <LuImage size="48px" />
+    <Image alt='jasenc.dev logo' src='./assets/207250834_padded_logo.png' rounded="lg"/>
   </Center>
 )
