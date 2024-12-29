@@ -1,8 +1,8 @@
 import { Box, Container, HStack, Spacer } from '@chakra-ui/react'
 import { Logo } from './logo'
-import { Button } from './button'
 import { MobilePopover } from './mobile-popover'
 import { NavbarLinks } from './navbar-links'
+import { ContactBlock } from './contact-button'
 
 export const Navbar = () => {
   return (
@@ -12,7 +12,7 @@ export const Navbar = () => {
           <Logo />
           <Spacer hideFrom="md" />
           <NavbarLinks hideBelow="md" />
-          <Button size={{ base: 'sm', md: 'md' }}>Buy Now</Button>
+          <ContactBlock />
           <MobilePopover>
             <NavbarLinks />
           </MobilePopover>
