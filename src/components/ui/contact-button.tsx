@@ -44,6 +44,7 @@ export const ContactBlock = () => {
             name="contact" // Form name for Netlify
             method="post"
             onSubmit={handleSubmit}
+            action='/'
           >
             {/* Hidden input to store form name */}
             <input type="hidden" name="form-name" value="contact" />
