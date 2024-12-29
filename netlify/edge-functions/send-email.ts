@@ -33,7 +33,7 @@ export const handler = async (event) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-Postmark-Server-Token': process.env.POSTMARK_API_KEY, // Use environment variable
+        'X-Postmark-Server-Token': process.env.POSTMARK_API_KEY || '', // Use environment variable
       },
       body: JSON.stringify(emailPayload),
     });
@@ -42,7 +42,7 @@ export const handler = async (event) => {
       const error = await response.json();
       return {
         statusCode: 500,
-        body: JSON.stringify({ error: error.Message }),
+        body: JSON.stringify({ error: (error as any).Message }),
       };
     }
 
