@@ -16,14 +16,12 @@ import {
 } from './dialog';
 
 export const ContactBlock = () => {
-  // State to manage form data
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
 
-  // Handle input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -49,8 +47,8 @@ export const ContactBlock = () => {
         </DialogHeader>
 
         <DialogBody px="6">
+          {/* Ensure proper form setup */}
           <form
-            onSubmit={(e) => e.preventDefault()} // Prevent reload; Netlify will handle the rest
             name="contact" // Form name for Netlify
             method="POST"
             data-netlify="true"
@@ -58,7 +56,7 @@ export const ContactBlock = () => {
           >
             {/* Hidden input to store form name */}
             <input type="hidden" name="form-name" value="contact" />
-            <input type="hidden" name="bot-field" /> {/* Honeypot field */}
+            <input type="hidden" name="bot-field" />
 
             <Stack gap={{ base: '4', md: '6' }}>
               <FormControl id="name" isRequired>
@@ -94,19 +92,20 @@ export const ContactBlock = () => {
                 />
               </FormControl>
             </Stack>
+
+            <DialogFooter>
+              <DialogActionTrigger asChild>
+                <Button variant="outline" colorScheme="gray">
+                  Cancel
+                </Button>
+              </DialogActionTrigger>
+              {/* Ensure the button is of type 'submit' */}
+              <Button type="submit" colorScheme="blue">
+                Submit
+              </Button>
+            </DialogFooter>
           </form>
         </DialogBody>
-
-        <DialogFooter>
-          <DialogActionTrigger asChild>
-            <Button variant="outline" colorScheme="gray">
-              Cancel
-            </Button>
-          </DialogActionTrigger>
-          <Button type="submit" colorScheme="blue">
-            Submit
-          </Button>
-        </DialogFooter>
         <DialogCloseTrigger />
       </DialogContent>
     </DialogRoot>

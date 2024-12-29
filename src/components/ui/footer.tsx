@@ -34,13 +34,6 @@ export const Footer = () => (
       direction={{ base: 'column-reverse', md: 'row' }}
       justifyContent="center"
     >
-      <HStack gap="6">
-        {['Privacy Policy', 'Terms of Service', 'License Agreement'].map((link, idx) => (
-          <Link key={idx} href={link} textStyle="sm" variant="underline" colorPalette="gray">
-            {link}
-          </Link>
-        ))}
-      </HStack>
     </Stack>
   </Container>
 )
