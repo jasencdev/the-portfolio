@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useForm, ValidationError } from '@formspree/react'
 import { Input, Stack, Textarea } from '@chakra-ui/react';
 import { FormControl, FormLabel } from '@chakra-ui/form-control';
 import { Button } from './button';
@@ -16,57 +16,10 @@ import {
 } from './dialog';
 
 export const ContactBlock = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-
-interface FormData {
-    name: string;
-    email: string;
-    message: string;
-}
-
-const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    const form = event.target as HTMLFormElement;
-    const formData = new FormData(form);
-
-    const data: FormData = {
-        name: formData.get('name') as string,
-        email: formData.get('email') as string,
-        message: formData.get('message') as string,
-    };
-
-    try {
-        const response = await fetch('/.netlify/functions/send-email', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
-
-        if (response.ok) {
-            console.log('Email sent successfully');
-        } else {
-            console.error('Error sending email:', await response.json());
-        }
-    } catch (error) {
-        console.error('Network error:', error);
+    const [state, handleSubmit] = useForm("mqaaboaw");
+    if (state.succeeded) {
+        return <p>Thanks for reaching out!</p>;
     }
-};
 
   return (
     <DialogRoot placement="center" size={{ base: 'cover', md: 'sm' }}>
@@ -86,18 +39,11 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 
         <DialogBody px="6">
           {/* Ensure proper form setup */}
-          <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
-            <input type="text" name="name" />
-            <input type="email" name="email" />
-            <textarea name="message"></textarea>
-          </form>
           
           <form
-            data-netlify="true"
             name="contact" // Form name for Netlify
             method="post"
             onSubmit={handleSubmit}
-            netlify-honeypot="bot-field" // Anti-spam honeypot
           >
             {/* Hidden input to store form name */}
             <input type="hidden" name="form-name" value="contact" />
@@ -107,22 +53,29 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
               <FormControl id="name" isRequired>
                 <FormLabel>Name</FormLabel>
                 <Input
+                  id="name"
                   type="text"
                   name="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
+                  placeholder="Your Name Here"
+                />
+                <ValidationError
+                    prefix='Name'
+                    field='name'
+                    errors={state.errors}
                 />
               </FormControl>
 
               <FormControl id="email" isRequired>
                 <FormLabel>Email</FormLabel>
                 <Input
-                  type="email"
+                  type="Email"
                   name="email"
                   placeholder="your.email@example.com"
-                  value={formData.email}
-                  onChange={handleChange}
+                />
+                <ValidationError
+                    prefix='Email'
+                    field='email'
+                    errors={state.errors}
                 />
               </FormControl>
 
@@ -131,9 +84,12 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
                 <Textarea
                   name="message"
                   placeholder="Your message..."
-                  value={formData.message}
-                  onChange={handleChange}
                   rows={4}
+                />
+                <ValidationError
+                    prefix='Message'
+                    field='message'
+                    errors={state.errors}
                 />
               </FormControl>
             </Stack>
@@ -145,7 +101,7 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
                 </Button>
               </DialogActionTrigger>
               {/* Ensure the button is of type 'submit' */}
-              <Button type="submit" colorScheme="blue">
+              <Button type="submit" colorScheme="blue" disabled={state.submitting}>
                 Submit
               </Button>
             </DialogFooter>
