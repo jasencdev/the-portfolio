@@ -86,6 +86,12 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 
         <DialogBody px="6">
           {/* Ensure proper form setup */}
+          <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+            <input type="text" name="name" />
+            <input type="email" name="email" />
+            <textarea name="message"></textarea>
+          </form>
+          
           <form
             data-netlify="true"
             name="contact" // Form name for Netlify
