@@ -32,8 +32,6 @@ const system = createSystem(defaultConfig, {
 
 export const Provider = (props: PropsWithChildren) => (
   <ChakraProvider value={system}>
-    <ColorModeProvider>
       {props.children}
-    </ColorModeProvider>
   </ChakraProvider>
 )
