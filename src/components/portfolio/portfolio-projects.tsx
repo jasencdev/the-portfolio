@@ -32,8 +32,8 @@ export const PortfolioProjects = () => {
     async function loadPosts() {
       try {
         const mdxFiles = import.meta.glob<string>('/public/projects/*.mdx', {
-          as: 'raw',
-          eager: false
+          query: '?raw',
+          import: 'default'
         })
 
         const loadedPosts = await Promise.all(

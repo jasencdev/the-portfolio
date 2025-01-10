@@ -36,8 +36,8 @@ export const BlogBlock = () => {
     async function loadPosts() {
       try {
         const mdxFiles = import.meta.glob<string>('/public/posts/*.mdx', {
-          as: 'raw',
-          eager: false
+          query: '?raw',
+          import: 'default'
         })
 
         const loadedPosts = await Promise.all(

@@ -26,8 +26,8 @@ export async function loadContent(filePath: string): Promise<{
     console.log("Looking for file with ID:", filePath);
 
     const mdxFiles = import.meta.glob<string>("/public/projects/*.mdx", {
-      as: "raw",
-      eager: false,
+      query: '?raw',
+      import: 'default'
     });
 
     // Log available files
