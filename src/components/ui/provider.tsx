@@ -6,7 +6,6 @@ import {
   defaultConfig 
 } from '@chakra-ui/react'
 import type { PropsWithChildren } from 'react'
-import { ColorModeProvider } from './color-mode'
 
 const system = createSystem(defaultConfig, {
   globalCss: {
