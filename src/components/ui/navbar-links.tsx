@@ -3,9 +3,9 @@ import { Link, Stack, type StackProps } from '@chakra-ui/react'
 export const NavbarLinks = (props: StackProps) => {
   // Define the navigation items and their corresponding hrefs
   const navItems = [
-    { label: 'Portfolio', href: '/Portfolio' },
-    { label: 'Blog', href: '/Blog' },
-    { label: 'About', href: '/About' },
+    { label: 'Portfolio', href: '/portfolio' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'About', href: '/about' },
   ]
 
   return (

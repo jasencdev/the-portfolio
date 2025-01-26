@@ -7,7 +7,6 @@ import {
     HStack,
     Icon,
     SimpleGrid,
-    Span,
     Stack,
     Text,
   } from '@chakra-ui/react'
@@ -15,9 +14,7 @@ import {
     LuBadgeCheck,
     LuCheckCheck,
     LuMapPin,
-    LuMedal,
     LuMessageCircle,
-    LuStar,
   } from 'react-icons/lu'
   import { Avatar } from '../ui/avatar'
   
@@ -49,26 +46,16 @@ import {
                 <Text textStyle="xl" fontWeight="semibold">
                   {data.name}
                 </Text>
-                <Text textStyle="sm" color="fg.muted">
-                  @{data.username}
-                </Text>
               </HStack>
   
               <HStack columnGap="6" rowGap="2" textStyle="sm" wrap="wrap">
-                <HStack gap="1">
-                  <LuStar />
-                  <Span fontWeight="medium">{data.rating}</Span>
-                  <Span color="fg.muted">({data.ratingCount})</Span>
-                </HStack>
   
                 <HStack gap="1" color="fg.muted">
                   <LuMapPin />
                   {data.location}
                 </HStack>
   
-                <Badge colorPalette="orange">
-                  <LuMedal /> Top Rated
-                </Badge>
+
               </HStack>
   
               <Text color="fg.muted">{data.title}</Text>
@@ -165,13 +152,12 @@ import {
   }
   
   const data = {
-    name: 'Jasen C.',
+    name: 'Jasen Carroll',
     location: 'Philadelphia, PA',
     language: 'English',
     username: 'jasencarroll',
     rating: 4.5,
     ratingCount: 140,
-    topRated: true,
     image: 'https://avatars.githubusercontent.com/u/108644550?v=4',
     title: 'Entrepreneur & Developer',
     description:
@@ -204,18 +190,18 @@ import {
       'Figma',
       'VS Code',
       'Docker',
-      'Webflow',
-      'Zeplin',
-      'InVision',
-      'Principle',
-      'Framer',
+      'Ollama',
+      'Open WebUI',
+      'TailScale',
+      'Small Language Models',
+      'Large Language Models',
       'Abstract',
     ],
     data_frameworks: [
       'Pandas',
       'NumPy',
-      'Docker',
-      'Webflow',
+      'Colab',
+      'Data Lab',
       'Zeplin',
       'InVision',
       'Principle',
