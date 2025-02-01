@@ -202,11 +202,6 @@ import {
       'NumPy',
       'Colab',
       'Data Lab',
-      'Zeplin',
-      'InVision',
-      'Principle',
-      'Framer',
-      'Abstract',
     ],
   }
   
