@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "test": "jest",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "node server.js"
   },
   "dependencies": {
     "@chakra-ui/form-control": "^2.2.0",
@@ -20,6 +21,7 @@
     "@types/node-fetch": "^2.6.12",
     "buffer": "^6.0.3",
     "eslint-plugin-react": "^7.37.3",
+    "express": "^4.21.2",
     "framer-motion": "^11.15.0",
     "gray-matter": "^4.0.3",
     "next-themes": "^0.4.4",
