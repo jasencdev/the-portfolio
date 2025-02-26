@@ -19,5 +19,5 @@ export const createSlug = (text: string): string => {
    * @returns The filename without extension
    */
   export const getFileNameFromPath = (path: string): string => {
-    return path.split('/').pop()?.replace('.mdx', '') || ''
+    return path.split('/').pop()?.replace(/\.(md|mdx)$/, '') || ''
   }

@@ -35,16 +35,16 @@ export const BlogBlock = () => {
   useEffect(() => {
     async function loadPosts() {
       try {
-        const mdxFiles = import.meta.glob<string>('/public/posts/*.mdx', {
+        const mdFiles = import.meta.glob<string>('/public/posts/*.{md,mdx}', {
           query: '?raw',
           import: 'default'
         })
 
         const loadedPosts = await Promise.all(
-          Object.entries(mdxFiles).map(async ([path, loader]) => {
+          Object.entries(mdFiles).map(async ([path, loader]) => {
             const content = await loader()
             const { data } = grayMatter(content)
-            const id = path.split('/').pop()?.replace('.mdx', '') || ''
+            const id = path.split('/').pop()?.replace(/\.(md|mdx)$/, '') || ''
             return { ...data, id } as Post
           })
         )
