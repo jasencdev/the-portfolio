@@ -20,6 +20,10 @@ export default defineConfig({
     include: ['buffer'],
   },
   server: {
+    host: 'localhost',
+    port: 3000,
+    strictPort: true,
+    cors: false,
     fs: {
       allow: ['src'], // Ensure the `src` directory is accessible
     },
