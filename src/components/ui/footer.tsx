@@ -22,7 +22,7 @@ export const Footer = () => (
       <HStack gap={{ base: '4', md: '3' }}>
         {socialLinks.map(({ href, icon }, index) => (
           <Link key={index} href={href} aria-label={href} color="fg.muted">
-            <Icon as={icon} size="md" />
+            <Icon size="md">{icon}</Icon>
           </Link>
         ))}
       </HStack>
@@ -39,5 +39,5 @@ export const Footer = () => (
 )
 
 const socialLinks = [
-  { href: 'https://github.com/jasencdev', icon: SiGithub },
+  { href: 'https://github.com/jasencdev', icon: <SiGithub /> },
 ]
