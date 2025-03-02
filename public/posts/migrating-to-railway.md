@@ -140,9 +140,9 @@ If you're considering migrating from Heroku to Railway, here are some tips:
 ## Conclusion
 
 After several months on Railway, I'm confident that switching from Heroku was the right decision. The platform offers better performance, a more intuitive developer experience, and significantly lower costs.
-
+\
 For developers frustrated with Heroku's pricing changes or looking for a more modern deployment platform, Railway represents an excellent alternative that strikes the right balance between simplicity and flexibility.
-
+\
 The migration process was smoother than expected, and the few challenges encountered were quickly resolved with Railway's responsive support and comprehensive documentation.
-
+\
 Have you migrated from Heroku to another platform? I'd love to hear about your experience in the comments!

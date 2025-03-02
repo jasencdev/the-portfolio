@@ -2,6 +2,7 @@ import grayMatter from "gray-matter";
 import { remark } from "remark";
 import remarkHtml from "remark-html";
 import remarkGfm from "remark-gfm";
+import remarkBreaks from "remark-breaks";
 
 export interface Frontmatter {
   id: string;
@@ -49,6 +50,7 @@ export async function loadContent(filePath: string): Promise<{
 
     const processed = await remark()
       .use(remarkGfm)
+      .use(remarkBreaks)
       .use(remarkHtml)
       .process(mdContent);
 
