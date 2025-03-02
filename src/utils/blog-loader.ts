@@ -26,7 +26,7 @@ export async function loadContent(filePath: string): Promise<{
     console.log("Looking for file with ID:", filePath);
 
     // Support both .md and .mdx files
-    const mdFiles = import.meta.glob<string>("/public/posts/*.{md,mdx}", {
+    const mdFiles = import.meta.glob<string>("/public/posts/*.md", {
       query: '?raw',
       import: 'default'
     });
@@ -35,11 +35,7 @@ export async function loadContent(filePath: string): Promise<{
     console.log("Available markdown files:", Object.keys(mdFiles));
 
     // Try .mdx extension first, then .md
-    let expectedPath = `/public/posts/${filePath}.mdx`;
-    if (!mdFiles[expectedPath]) {
-      expectedPath = `/public/posts/${filePath}.md`;
-    }
-    console.log("Expected path:", expectedPath);
+    let expectedPath = `/public/posts/${filePath}.md`;
 
     if (!mdFiles[expectedPath]) {
       throw new Error(`Blog post file not found at path: ${expectedPath}`);
