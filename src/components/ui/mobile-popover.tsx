@@ -23,7 +23,7 @@ export const MobilePopover = (props: PropsWithChildren) => {
               colorPalette="gray"
               hideFrom="md"
             >
-              <Icon size="md">{context.open ? <LuX /> : <LuAlignRight />}</Icon>
+              <Icon as={context.open ? LuX : LuAlignRight} size="md" />
             </IconButton>
           </PopoverTrigger>
         )}
