@@ -159,18 +159,18 @@ import {
     rating: 4.5,
     ratingCount: 140,
     image: 'https://avatars.githubusercontent.com/u/108644550?v=4',
-    title: 'Entrepreneur & Developer',
+    title: 'Full Stack Data Engineer',
     description:
-      'Mechanical Engineer, Architect, & Developer with over 10 years of experience. Leading Quality Engineering with combination products at PCI.',
-    skills: ['UI/UX Design', 'Frontend Development', 'User Requirements', 'Design Systems', 'Figma', 'Full Stack Development', 'Backend Development', 'Data Science'],
+      "I'm a versatile software engineer proficient in full stack development, UI/UX design, and data analysis. My technical portfolio spans multiple languages, frameworks, and software systems, allowing me to contribute across the development lifecycle. While my breadth of knowledge enables me to work effectively across various domains, my passion and deepest expertise lies in backend data engineering. This specialization forms the vertical bar of my T-shaped skill profile, complemented by my broader technical capabilities that make me adaptable to diverse project requirements.",
+    skills: ['User Requirements', 'Design Systems', 'Architecture', 'Full Stack Development', 'Backend Development', 'Data Algorithms', 'Generative AI', 'Data Engineering', 'DevOps', 'Cloud & Bare Metal'],
     languages: [
       'C++',
       'Python',
       'Ruby',
       'JavaScript',
-      'TypeScript',
       'SQL',
       'Markdown',
+      'And More'
     ],
     software_frameworks: [
       'Flask',
@@ -185,6 +185,7 @@ import {
       'Vite',
       'Astro',
       'Express',
+      'And More'
     ],
     softwares: [
       'Figma',
@@ -195,13 +196,18 @@ import {
       'TailScale',
       'Small Language Models',
       'Large Language Models',
-      'Abstract',
+      'And More'
     ],
     data_frameworks: [
+      'Matplotlib',
+      'Seaborn',
+      'Plotly',
+      'Scikit-Learn',
       'Pandas',
       'NumPy',
       'Colab',
       'Data Lab',
+      'And More'
     ],
   }
   

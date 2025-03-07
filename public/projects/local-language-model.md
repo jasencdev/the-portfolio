@@ -17,7 +17,7 @@ liveUrl: "https://example.com"
 
 ## Introduction
 
-With the rise of generative AI, experimenting with language models has become a hot topic among developers. However, many solutions rely on paid APIs that limit flexibility and accessibility. That's where this self-hosted small language model comes in—a project built to empower developers with full control over AI tools. By integrating **Open WebUI**, **LangChain**, and **LlamaIndex**, this project enables seamless experimentation without relying on third-party APIs.
+With the rise of generative AI, experimenting with language models has become a hot topic among developers. However, many solutions rely on paid APIs that limit flexibility and accessibility. That's where this self-hosted small language model comes in—a project built to empower developers with full control over AI tools. By integrating **Open WebUI** this project enables seamless experimentation without relying on third-party APIs.
 
 In this post, I'll walk you through the features of the project, the technologies powering it, and why it's the perfect solution for those who want to take control of their AI workflows.
 

@@ -74,11 +74,11 @@ export const PortfolioProjects = () => {
                 Portfolio
               </Text>
               <Heading as="h1" textStyle={{ base: '4xl', md: '5xl' }} color="colorPalette.contrast">
-                Coming Soon
+                Full Stack Data Engineering
               </Heading>
             </Stack>
             <Text color="colorPalette.contrast/90" textStyle={{ base: 'lg', md: 'xl' }} maxW="3xl">
-              This is where I'll be posting Portfolio projects as they relate to jasenc.dev. This is also modular enough to turn into Service Offerings instead. 
+              Currently pursuing my Master's in Software Engineering with a focus on data engineering and generative AI. This portfolio showcases my projects as I explore the fascinating intersection of data pipelines and AI technologies. I'm documenting my learning journey through apps that scale, data systems, and generative AI tools.
             </Text>
           </Stack>
         </Stack>
