@@ -1,8 +1,8 @@
 ---
 id: "1"
-title: "Coming Soon - Placeholder"
-readTime: "0 min"
-excerpt: "Nothing to see here..."
+title: "This Portfolio App"
+readTime: "3 min"
+excerpt: "How I Built this App"
 image: "/projects/reactstate-pro.jpg"
 category: "Open Source"
 publishedAt: "January 20, 2024"

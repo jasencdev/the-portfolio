@@ -3,7 +3,7 @@ id: "2"
 title: "Self-Hosted Small Language Model"
 readTime: "5 min"
 excerpt: "A self-hosted small language model application using Open WebUI, built to enable experimentation with LangChain, LlamaIndex, and other AI tools without relying on paid APIs."
-image: "/projects/slm-dashboard.jpg"
+image: "/img/slm-dashboard.png"
 category: "Artificial Intelligence"
 publishedAt: "January 31, 2025"
 author:
@@ -13,7 +13,7 @@ technologies: ["Open WebUI", "Python", "LangChain", "LlamaIndex", "FastAPI", "Po
 githubUrl: "https://github.com/jasencarroll/project-repo"
 liveUrl: "https://example.com"
 ---
-![Project Screenshot](/slm-dashboard.png)
+![Project Screenshot](/img/slm-dashboard.png)
 
 ## Introduction
 
