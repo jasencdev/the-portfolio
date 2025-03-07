@@ -2,6 +2,54 @@
    GLOBAL MARKDOWN STYLES
    -------------------------------------------------- */
 
+/* Special container styling for markdown content */
+.markdown-content ul,
+.markdown-content ol {
+  list-style-position: outside !important;
+  margin: 1em 0 !important;
+  padding-left: 2em !important;
+  /* Reset Chakra UI styles that might interfere */
+  padding-inline-start: 2em !important;
+  margin-block: 1em !important;
+  margin-inline: 0 !important;
+}
+
+.markdown-content ul {
+  list-style-type: disc !important;
+}
+
+.markdown-content ol {
+  list-style-type: decimal !important;
+}
+
+.markdown-content li {
+  display: list-item !important;
+  margin-bottom: 0.5em !important;
+  /* Make sure the list style is visible */
+  visibility: visible !important;
+  position: relative !important;
+}
+
+.markdown-content li::marker {
+  /* Ensure markers are visible */
+  display: inline-block !important;
+  visibility: visible !important;
+}
+
+.markdown-content li > ul {
+  list-style-type: circle !important;
+}
+
+.markdown-content li > ol {
+  list-style-type: lower-alpha !important;
+}
+
+/* Reset any Chakra specific styles */
+.markdown-content ul > li::before,
+.markdown-content ol > li::before {
+  content: none !important;
+}
+
 /* 1) HEADINGS (H1 - H6) */
 h1 {
     font-size: 1.5em; /* user preference */
@@ -69,9 +117,25 @@ h1 {
   ul, ol {
     margin: 1em 0;
     padding-left: 2em;
+    list-style-position: outside;
+  }
+  
+  ul {
+    list-style-type: disc;
+  }
+  
+  ol {
+    list-style-type: decimal;
   }
   
   li {
+    margin-bottom: 0.5em;
+    display: list-item;
+  }
+  
+  /* Nested lists */
+  li > ul, li > ol {
+    margin-top: 0.5em;
     margin-bottom: 0.5em;
   }
   

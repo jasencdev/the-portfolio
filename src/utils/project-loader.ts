@@ -48,8 +48,12 @@ export async function loadContent(filePath: string): Promise<{
     const { data, content: mdContent } = grayMatter(rawContent);
 
     const processed = await remark()
-      .use(remarkGfm)
-      .use(remarkHtml)
+      .use(remarkGfm, { 
+        singleTilde: false,
+        tableCellPadding: true,
+        tablePipeAlign: true
+      })
+      .use(remarkHtml, { sanitize: false })
       .process(mdContent);
 
     return {

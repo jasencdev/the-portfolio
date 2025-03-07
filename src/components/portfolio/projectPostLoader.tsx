@@ -43,6 +43,7 @@ const ProjectPostLoader: React.FC<ProjectPostLoaderProps> = ({ filePath }) => {
             </Heading>
           </Stack>
           <Box
+            className="markdown-content"
             color="fg.muted"
             dangerouslySetInnerHTML={{ __html: content }}
           />

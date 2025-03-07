@@ -41,6 +41,7 @@ const BlogPostLoader: React.FC<BlogPostLoaderProps> = ({ filePath }) => {
             <Heading as="h1">{frontmatter.title}</Heading>
           </Stack>
           <Box
+            className="markdown-content"
             color="fg.muted"
             dangerouslySetInnerHTML={{ __html: content }}
           />
