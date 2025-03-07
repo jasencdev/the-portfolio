@@ -1,5 +1,5 @@
 ---
-id: "3"
+id: "2"
 title: "PostgreSQL Your Open WebUI"
 readTime: "5 min"
 excerpt: "Setting Up A PostGreSQL DB for Open WebUI."
