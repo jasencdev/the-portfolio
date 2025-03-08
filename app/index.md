@@ -9,18 +9,18 @@ hero:
     src: https://raw.githubusercontent.com/jasencdev/the-portfolio/5874337ff4af521fda53fb3193075b45349a140c/black-logo-nobackground.png
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: See Projects
+      link: /projects
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Read Blog
+      link: /blog
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
+  - title: Back End Engineering
+    details: My passion for software engineering lays in the back end.
+  - title: Data Science & Data Engineering
+    details: I love data, such logical princples that need to be setup correctly.
+  - title: Generative AI
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 
