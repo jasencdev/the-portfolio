@@ -2,7 +2,7 @@
 title: "Self-Hosted Small Language Model"
 date: 2025-01-31
 ---
-![Project Screenshot](/img/slm-dashboard.png)
+![Project Screenshot](/slm-dashboard.png)
 
 ## Introduction
 
