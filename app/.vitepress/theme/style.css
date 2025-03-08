@@ -137,3 +137,12 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+/**
+ * Component: Hero Image
+ * -------------------------------------------------------------------------- */
+
+.VPHero .image-src {
+  border-radius: 25%;
+  overflow: hidden;
+}
+
