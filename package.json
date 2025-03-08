@@ -1,4 +1,6 @@
 {
+  "type": "module",
+  "name": "vitepress-starter",
   "scripts": {
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
