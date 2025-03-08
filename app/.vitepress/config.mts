@@ -2,6 +2,8 @@ import { defineConfig } from 'vitepress'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+// Add reference to type declaration file
+/// <reference path="./types.d.ts" />
 
 // Function to get all posts
 function getPosts() {
@@ -126,6 +128,9 @@ export default defineConfig({
   title: "jasenc.dev",
   description: "Portfolio for jasenc.dev",
   themeConfig: {
+    search: {
+      provider: 'local'
+    },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },

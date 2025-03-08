@@ -16,11 +16,14 @@ hero:
       link: /api-examples
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Credentials
+    details: Click this box to get a list of credentials I've completed.  
+    link: /about/credentials
+  - title: Skills
+    details: Or you could click this one and see bubbles of the skills I've proud of.
+    link: /about/skills
+  - title: Resume
+    details: Finally, if that wasn't enough here if my full resume. 
+    link: 'https://github.com/jasencdev/the-portfolio'
 ---
 

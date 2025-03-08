@@ -16,11 +16,14 @@ hero:
       link: /blog
 
 features:
-  - title: Back End Engineering
-    details: My passion for software engineering lays in the back end.
+  - title: Full Stack Engineering
+    details: My passion for software engineering lays in the back end, but I can do a little bit of everything.
+    link: https://github.com/jasencdev/the-portfolio
   - title: Data Science & Data Engineering
     details: I love data, such logical princples that need to be setup correctly.
+    link: https://github.com/jasencdev/the-portfolio
   - title: Generative AI
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: It's always important to keep up with technology and let it help you scale 🚀
+    link: https://github.com/jasencdev/the-portfolio
 ---
 
