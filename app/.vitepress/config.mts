@@ -137,6 +137,7 @@ export default defineConfig({
       { text: 'Projects', link: '/projects' },
       { text: 'Blog', link: '/blog' },
       { text: 'About', link: '/about' },
+      { text: 'Contact', link: '/contact' },
     ],
 
     sidebar: [
@@ -164,5 +165,12 @@ export default defineConfig({
     posts: getPosts(),
     // Add projects to theme data
     projects: getProjects()
+  },
+  vue: {
+    template: {
+      compilerOptions: {
+        isCustomElement: (tag) => ['FormKit', 'FormKitSchema'].includes(tag) || tag.startsWith('FormKit')
+      }
+    }
   }
 })
