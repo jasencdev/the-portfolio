@@ -109,6 +109,13 @@ func main() {
             c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request"})
             return
         }
+        
+        // Validate form data
+        if form.Name == "" || form.Email == "" || form.Message == "" {
+            fmt.Println("Missing required fields")
+            c.JSON(http.StatusBadRequest, gin.H{"error": "Missing required fields"})
+            return
+        }
     
         // Log the received form data
         fmt.Printf("Received form submission: %+v\n", form)
