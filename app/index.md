@@ -17,13 +17,13 @@ hero:
 
 features:
   - title: Full Stack Engineering
-    details: My passion for software engineering lays in the back end, but I can do a little bit of everything.
+    details: Specialized in backend development with comprehensive proficiency across the full technology stack.
     link: https://github.com/jasencdev/the-portfolio
   - title: Data Science & Data Engineering
-    details: I love data, such logical princples that need to be setup correctly.
+    details: Expertise in data architecture with emphasis on logical principles and proper implementation methodologies.
     link: https://github.com/jasencdev/the-portfolio
   - title: Generative AI
-    details: It's always important to keep up with technology and let it help you scale 🚀
+    details: It's always important to keep up with technology and leverage it to achieve greater scalability. 🚀
     link: https://github.com/jasencdev/the-portfolio
 ---
 

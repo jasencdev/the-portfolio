@@ -9,11 +9,11 @@ A simple CRUD-based blogging application is easy to build, but a **production-re
 
 Inspired by Miguel Grinberg's [Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world), I built this Flask Microblog with modern enhancements, including:
 
-✅ **Microsoft Translator API** for post translation
-✅ **Elasticsearch** for full-text search
-✅ **PostgreSQL** as the primary database
-✅ **Postmark** for email notifications
-✅ **Railway** for cloud deployment
+- **Microsoft Translator API** for post translation
+- **Elasticsearch** for full-text search
+- **PostgreSQL** as the primary database
+- **Postmark** for email notifications
+- **Railway** for cloud deployment
 
 This post walks through the key features, how they are implemented, and why they make the microblog scalable and production-ready.
 
@@ -66,7 +66,7 @@ To further enhance the project, upcoming features include:
 
 ## **Final Thoughts**
 
-This Flask Microblog is more than just a simple web app—it's a **production-ready microblog** with modern integrations for real-world use. If you're interested in deploying a similar app, check out the **[GitHub repository](https://github.com/jasencarroll/flask-microblog)**.
+This Flask Microblog represents a comprehensive, **production-ready application** with modern integrations optimized for real-world implementation. For additional technical details and deployment instructions, please refer to the **[GitHub repository](https://github.com/jasencarroll/flask-microblog)**.
 
-**Explore. Build. Deploy.**
+The implementation demonstrates effective integration of multiple systems to deliver a robust, scalable solution.
 

@@ -4,7 +4,7 @@ date: 2025-02-02
 ---
 # Setting up PostgreSQL for Open WebUI: A Quick Guide
 
-Today I made my deployment of Open WebUI more robust by moving it to a directory that made more sense as well as implementing PostgreSQL. This short guide documents the process for others who might want to do the same.
+This guide documents the process of enhancing an Open WebUI deployment by implementing PostgreSQL as the database backend. The implementation provides improved stability, performance, and maintainability for production environments.
 
 ## Prerequisites
 - A working Open WebUI installation
@@ -12,7 +12,7 @@ Today I made my deployment of Open WebUI more robust by moving it to a directory
 - Basic understanding of PostgreSQL administration
 
 ## Step 1: Creating the Database
-First, let's get to `postgres` by `sudo -u postgres psql` and create a dedicated database and user for Open WebUI. Using the PostgreSQL superuser account:
+Begin by accessing the PostgreSQL command interface using `sudo -u postgres psql` to create a dedicated database and user for Open WebUI. Execute the following commands using the PostgreSQL superuser account:
 
 ```sql
 CREATE DATABASE openwebui;

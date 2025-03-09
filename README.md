@@ -11,6 +11,24 @@ use of Python's `Starlette` framework, whichs seems great and all, but in this a
 the bundled features that come along with `Starlette`. This is quickly turning into a blog post so
 let's get started.
 
+## Overview
+
+This portfolio site combines a VitePress-based frontend with a Go/Gin backend that serves the static site. It features:
+
+- Fast, SEO-friendly static site generation
+- Markdown-based content management
+- TypeScript support
+- Contact form with email functionality
+- Modern responsive design
+- Blog and project showcase sections
+
+## Requirements
+
+- Node.js (v16+)
+- npm or yarn
+- Go (v1.16+)
+- Git
+
 ## Getting Started
 
 From your `home` directory, make a `dev` directory or some other directory for building apps.
@@ -121,3 +139,103 @@ Then we'll run the server
 ```
 
 And the VitePress site should be available at `localhost:8080`.
+
+## Development Workflow
+
+### Frontend Development
+
+1. Navigate to the app directory:
+   ```bash
+   cd app
+   ```
+
+2. Start the VitePress development server:
+   ```bash
+   npm run docs:dev
+   ```
+   
+   This will start a dev server at `localhost:5173` with hot-reload.
+
+3. Make changes to the Markdown files in the `app/` directory to update content.
+
+4. To add new blog posts, create Markdown files in the `app/posts/` directory.
+
+5. To add new projects, create Markdown files in the `app/projects/` directory.
+
+### Backend Development
+
+1. Make changes to `main.go` to modify the server behavior.
+
+2. Rebuild the Go server:
+   ```bash
+   go build -o server main.go
+   ```
+
+3. Run the server:
+   ```bash
+   ./server
+   ```
+
+## Building for Production
+
+1. Build the VitePress site:
+   ```bash
+   cd app
+   npm run docs:build
+   ```
+
+2. Build the Go server:
+   ```bash
+   go build -o server main.go
+   ```
+
+3. The compiled server binary and the static site content can be deployed together.
+
+## Environment Variables
+
+Create a `.env` file in the root directory with the following variables:
+
+```
+RESEND_API_KEY=your_resend_api_key
+```
+
+This is used for the contact form email functionality.
+
+## Testing
+
+### Frontend Tests
+```bash
+cd app
+npm test
+```
+
+### Backend Tests
+```bash
+go test -v
+```
+
+## Docker Deployment
+
+A Dockerfile is included for easy deployment:
+
+```bash
+docker build -t the-portfolio .
+docker run -p 8080:8080 -e RESEND_API_KEY=your_key the-portfolio
+```
+
+## Project Structure
+
+- `app/` - VitePress frontend
+  - `posts/` - Blog post markdown files
+  - `projects/` - Project showcase markdown files
+  - `.vitepress/` - VitePress configuration
+- `main.go` - Go/Gin backend server
+- `main_test.go` - Backend tests
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
