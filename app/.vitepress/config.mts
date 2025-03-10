@@ -164,7 +164,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/jasencdev' }
     ],
     
     // Add posts to theme data
