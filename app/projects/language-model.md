@@ -1,14 +1,14 @@
 ---
-title: "Self-Hosted Language Models: Building a Containerized AI Development Environment"
+title: "Self-Hosted Language Models: Building a Bare Metal AI Development Environment"
 date: 2025-01-31
 ---
 
-# Self-Hosted Language Models: Building a Containerized AI Development Environment
+# Self-Hosted Language Models: Building a Bare Metal AI Development Environment
 
 ![Project Screenshot](../img/slm-dashboard.png)
 
 ## Overview
-This project provides a self-hosted environment for language model experimentation, eliminating dependencies on external APIs. Built around Open WebUI and secured with Tailscale, it offers developers complete control over their AI tools while maintaining security and privacy.
+This project provides a self-hosted environment for language model experimentation, eliminating dependencies on external APIs. Built around Open WebUI and secured with Tailscale, it offers developers complete control over their AI tools while maintaining security and privacy through a bare metal approach.
 
 ## Architecture
 
@@ -25,6 +25,7 @@ This project provides a self-hosted environment for language model experimentati
 - **Models**: Support for multiple language models with easy switching
 - **Compute**: Optimized inference with CPU and optional GPU acceleration
 - **Storage**: Local file system for model weights and configurations
+- **OS**: Bare metal Ubuntu Server for direct hardware access and performance optimization
 
 ## Technologies Used
 - **Frontend**: 
@@ -34,7 +35,7 @@ This project provides a self-hosted environment for language model experimentati
 - **Backend**: 
   - Python backend services
   - Model serving frameworks
-  - Docker for containerization
+  - Bare Metal Ubuntu
 - **Security**: 
   - Tailscale for zero-config VPN
   - End-to-end encryption
@@ -43,9 +44,10 @@ This project provides a self-hosted environment for language model experimentati
   - Support for multiple small language models
   - Inference optimization techniques
 - **DevOps**:
-  - Docker Compose for multi-container management
-  - Volume mounting for persistent storage
-  - Resource allocation controls
+  - Nginx reverse proxies
+  - Prometheus, htop, nvidia-smi, etc.
+  - Systemd process automation.
+  - Cronjobs for automatic backups.
 
 ## Features
 - **Language Model Integration**: 
@@ -61,9 +63,9 @@ This project provides a self-hosted environment for language model experimentati
   - Conversation management
   - Prompt templates and history
 - **Performance**: 
-  - Optimized inference for lower-spec hardware
-  - Resource monitoring
-  - Response streaming
+  - Optimized inference for bare metal hardware
+  - Resource monitoring and fine-tuning
+  - Response streaming with minimal latency
 - **Customization**: 
   - Model parameter adjustments
   - Temperature and sampling controls
@@ -81,12 +83,12 @@ This project was motivated by several key factors:
 ### Architecture Decisions
 - **Open WebUI over Custom UI**: Leveraged existing open-source UI to accelerate development
 - **Tailscale for Security**: Chose Tailscale for its simplicity and strong security model
-- **Docker Containerization**: Selected for isolation, portability, and ease of deployment
+- **Bare Metal over Containerization**: Selected for maximum performance, direct hardware access, and simplified resource management
 - **Local Model Execution**: Prioritized on-device inference over API calls for privacy and control
 - **Modular Design**: Structured for future integration of advanced tools like LangChain and LlamaIndex
 
 ### Workflow
-1. Docker container setup with base environment and dependencies
+1. Ubuntu installation with adequate hardware and something similar to a GTX-3080.
 2. Open WebUI installation and configuration
 3. Integration with Tailscale for secure networking
 4. Model download and optimization procedures
@@ -102,86 +104,121 @@ This project was motivated by several key factors:
 
 ## Implementation Details
 
-### Docker Configuration
-The project uses Docker Compose for orchestrating multiple containers:
+### Bare Metal Configuration
 
-```yaml
-version: '3'
-services:
-  openwebui:
-    image: ghcr.io/open-webui/open-webui:main
-    restart: always
-    ports:
-      - "8080:8080"
-    volumes:
-      - ./open-webui-data:/app/backend/data
-    environment:
-      - OLLAMA_API_BASE_URL=http://ollama:11434/api
-      - WEBUI_AUTH=true
-      - WEBUI_INTERNET_FACING=false
+Skipping Docker and going straight for bare metal because, we want the AI to have more access to the
+environment and be able to pull resources as needed. For this we'll use an Intel 12th generation i5
+desktop CPU in a custom build with 64 GB of RAM and an Nvidia GTX-3080 with 10 GB of VRAM.
 
-  ollama:
-    image: ollama/ollama:latest
-    restart: always
-    volumes:
-      - ./ollama-data:/root/.ollama
-    ports:
-      - "11434:11434"
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
-```
+- Installed Ollama for running inference locally.
+- Downloaded the Phi4 model from Microsoft for open source.
+- Installed Open WebUI using a virtualenv and pip
+- Hardened the server, until it didn't make any more sense to continue.
+- Removed some of the hardening for the app to breathe/function correctly.
+- Integrated Tailscale
 
 ### Tailscale Integration
-Tailscale is implemented as a separate container for network security:
 
-```yaml
-  tailscale:
-    image: tailscale/tailscale:latest
-    restart: always
-    volumes:
-      - ./tailscale-data:/var/lib/tailscale
-    network_mode: "host"
-    cap_add:
-      - NET_ADMIN
-      - NET_RAW
-    environment:
-      - TS_AUTH_KEY=${TAILSCALE_AUTH_KEY}
-      - TS_ROUTES=10.0.0.0/8
-      - TS_HOSTNAME=ai-lab
-```
+Integrating Tailscale was as easy as installing it. All you have to do is point the Nginx reverse
+proxy to the IP address that Tailscale provides. This ensures that only devices logged in to your
+Tailscale have access to your application, basically a free VPS as I understand it.
 
 ## Deployment
 
-The deployment process is straightforward using Docker Compose:
+The deployment process follows these key steps on a bare metal Ubuntu server:
 
 ```bash
-# Clone the repository
-git clone https://github.com/username/self-hosted-llm.git
-cd self-hosted-llm
+# Update system packages
+sudo apt update && sudo apt upgrade -y
 
-# Set Tailscale auth key in .env file
-echo "TAILSCALE_AUTH_KEY=your_tailscale_key_here" > .env
+# Install required dependencies
+sudo apt install -y python3-pip python3-venv git nginx
 
-# Start the containers
-docker-compose up -d
+# Install Ollama
+curl -fsSL https://ollama.com/install.sh | sh
 
-# Download a model
-docker-compose exec ollama ollama pull llama2:7b
+# Install CUDA drivers (if using NVIDIA GPU)
+sudo apt install -y nvidia-driver-535 nvidia-cuda-toolkit
+
+# Clone Open WebUI repository
+git clone https://github.com/open-webui/open-webui.git
+cd open-webui
+
+# Setup Python virtual environment
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+# Install Tailscale
+curl -fsSL https://tailscale.com/install.sh | sh
+
+# Configure Tailscale
+sudo tailscale up
+
+# Configure Nginx as reverse proxy
+sudo cat > /etc/nginx/sites-available/open-webui << EOF
+server {
+    listen 80;
+    server_name _;
+
+    location / {
+        proxy_pass http://localhost:8080;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+}
+EOF
+
+# Enable site configuration
+sudo ln -s /etc/nginx/sites-available/open-webui /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl restart nginx
+
+# Create systemd service for Open WebUI
+sudo cat > /etc/systemd/system/open-webui.service << EOF
+[Unit]
+Description=Open WebUI Service
+After=network.target ollama.service
+
+[Service]
+User=$(whoami)
+WorkingDirectory=$(pwd)
+Environment="PATH=$(pwd)/venv/bin"
+Environment="OLLAMA_API_BASE_URL=http://localhost:11434/api"
+Environment="WEBUI_AUTH=true"
+Environment="WEBUI_INTERNET_FACING=false"
+ExecStart=$(pwd)/venv/bin/python -m app.backend.main
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# Enable and start the service
+sudo systemctl daemon-reload
+sudo systemctl enable open-webui
+sudo systemctl start open-webui
+
+# Download a model through Ollama
+ollama pull phi-latest
 ```
+
+This deployment approach ensures:
+- Direct access to system hardware for maximum performance
+- Proper system service management through systemd
+- Secure networking through Tailscale integration
+- Automatic startup on system boot
 
 ## Lessons Learned
 
 Throughout this project, I gained valuable insights:
 - **Resource Management**: Balancing model size with hardware capabilities is crucial
 - **Security Layers**: Multiple security layers provide better protection than a single approach
-- **Docker Optimization**: Container optimization significantly impacts performance
+- **Bare Metal Optimization**: Direct hardware access enables significant performance gains over containerization
 - **Model Selection**: Smaller models can provide impressive results with the right configuration
 - **User Experience**: The importance of intuitive interfaces for AI interaction
+- **System Integration**: Systemd service management simplifies running components as background services
 
 ## Future Improvements
 
