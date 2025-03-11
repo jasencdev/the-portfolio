@@ -3,7 +3,7 @@ title: "Runtime API Examples: A Developer's Guide to VitePress"
 date: 2023-11-10
 ---
 
-# Runtime API Examples
+# Runtime API Examples: A Developer's Guide to VitePress
 
 This page demonstrates usage of some of the runtime APIs provided by VitePress.
 

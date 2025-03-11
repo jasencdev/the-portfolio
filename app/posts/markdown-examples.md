@@ -2,7 +2,7 @@
 title: "Markdown Extensions: Practical Examples for Documentation"
 date: 2023-11-15
 ---
-# Markdown Extension Examples
+# Markdown Extensions: Practical Examples for Documentation
 
 This page demonstrates some of the built-in markdown extensions provided by VitePress.
 

@@ -2,7 +2,7 @@
 title: "PostgreSQL for Open WebUI: Implementation Guide for Production Environments"
 date: 2025-02-02
 ---
-# Setting up PostgreSQL for Open WebUI: A Quick Guide
+# PostgreSQL for Open WebUI: Implementation Guide for Production Environments
 
 This guide documents the process of enhancing an Open WebUI deployment by implementing PostgreSQL as the database backend. The implementation provides improved stability, performance, and maintainability for production environments.
 

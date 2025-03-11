@@ -3,7 +3,7 @@ title: "Continuous Delivery with Railway: Keeping the Vitepress Branch Always De
 date: 2025-03-11
 ---
 
-## Continuous Delivery with Railway: Keeping the Vitepress Branch Always Deployable
+# Continuous Delivery with Railway: Keeping the Vitepress Branch Always Deployable
 
 During the development of my new portfolio site, I wanted to ensure that my work was always in a deployable state. This article details how I set up continuous delivery using Railway to keep my development branch production-ready at all times.
 

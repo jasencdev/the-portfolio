@@ -3,9 +3,9 @@ title: "Migrating from Heroku to Railway: A Developer's Journey"
 date: 2025-02-25
 ---
 
-> Note: This article documents my recent migration to Railway and serves as a comprehensive guide for developers considering a similar transition.
+# Migrating from Heroku to Railway: A Developer's Journey
 
-## Migrating from Heroku to Railway: A Developer's Journey
+> Note: This article documents my recent migration to Railway and serves as a comprehensive guide for developers considering a similar transition.
 
 After years of hosting my applications on Heroku, the removal of their free tier and increasing costs prompted me to explore alternatives. Railway emerged as the perfect solution for my needs - offering a developer-friendly platform with better ergonomics and more reasonable pricing. This post details my migration experience and why Railway has become my new platform of choice.
 

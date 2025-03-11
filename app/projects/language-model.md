@@ -3,7 +3,7 @@ title: "Self-Hosted Language Models: Building a Containerized AI Development Env
 date: 2025-01-31
 ---
 
-# Self-Hosted Language Models
+# Self-Hosted Language Models: Building a Containerized AI Development Environment
 
 ![Project Screenshot](../img/slm-dashboard.png)
 

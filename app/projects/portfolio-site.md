@@ -3,7 +3,7 @@ title: "Portfolio Architecture: Building a Modern Developer Showcase with VitePr
 date: 2025-03-08
 ---
 
-# Portfolio Website
+# Portfolio Architecture: Building a Modern Developer Showcase with VitePress and Go
 
 ## Overview
 This project is my personal portfolio website, built using VitePress, Vue, and Go. It showcases my projects and blog posts in a clean, responsive interface while providing excellent performance and easy content management.

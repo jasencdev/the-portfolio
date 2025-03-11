@@ -3,7 +3,7 @@ title: "Flask Microblog: A Production-Ready Social Platform Implementation"
 date: 2024-11-10
 ---
 
-# Flask Microblog
+# Flask Microblog: A Production-Ready Social Platform Implementation
 
 ## Overview
 This project is a production-ready microblogging platform built with Flask, featuring multilingual support, full-text search, email notifications, and cloud deployment. Inspired by Miguel Grinberg's Flask Mega-Tutorial, it demonstrates how to implement enterprise-level features in a Flask application.

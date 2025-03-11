@@ -3,6 +3,8 @@ title: "Markdown Fundamentals: A Comprehensive Guide for Developers"
 date: 2023-11-15
 ---
 
+# Markdown Fundamentals: A Comprehensive Guide for Developers
+
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
 
 ## Headings
