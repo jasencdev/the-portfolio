@@ -7,7 +7,7 @@ const { theme } = useData()
 
 <ul>
   <li v-for="project in theme.projects" :key="project.link" class="project-item">
-    <div class="project-date">{{ new Date(project.date).toLocaleDateString() }}</div>
+    <div class="project-date">{{ new Date(project.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).replace(/ /g, ' ') }}</div>
     <a :href="project.link">{{ project.title }}</a>
   </li>
 </ul>

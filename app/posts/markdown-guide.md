@@ -1,5 +1,5 @@
 ---
-title: Markdown Guide
+title: "Markdown Fundamentals: A Comprehensive Guide for Developers"
 date: 2023-11-15
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Markdown Examples
+title: "Markdown Extensions: Practical Examples for Documentation"
 date: 2023-11-15
 ---
 # Markdown Extension Examples

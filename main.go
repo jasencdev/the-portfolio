@@ -70,14 +70,22 @@ func sendEmail(form ContactForm) error {
 
 func main() {
 	// Explicitly set the Gin mode to release
-	// gin.SetMode(gin.ReleaseMode)
+	gin.SetMode(gin.ReleaseMode)
 
 	// Create a Gin router
 	r := gin.Default()
 	
-	// Add CORS middleware
+	// Add CORS middleware with restricted origin
 	r.Use(func(c *gin.Context) {
-		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+		// Production origin
+		// c.Writer.Header().Set("Access-Control-Allow-Origin", "https://jasenc.dev")
+		// Staging origin
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "https://the-portfolio-production.up.railway.app/")
+		// Development origin
+		// c.Writer.Header().Set("Access-Control-Allow-Origin", "http://localhost:8080")
+
+
+		// remaining CORS configuration
 		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
 		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With")
 		c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT, DELETE")

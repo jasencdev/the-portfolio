@@ -1,5 +1,5 @@
 ---
-title: Runtime API Examples
+title: "Runtime API Examples: A Developer's Guide to VitePress"
 date: 2023-11-10
 ---
 

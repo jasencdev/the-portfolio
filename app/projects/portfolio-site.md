@@ -1,5 +1,5 @@
 ---
-title: "Portfolio Website"
+title: "Portfolio Architecture: Building a Modern Developer Showcase with VitePress and Go"
 date: 2025-03-08
 ---
 

@@ -1,71 +1,193 @@
 ---
-title: "Self-Hosted Small Language Model"
+title: "Self-Hosted Language Models: Building a Containerized AI Development Environment"
 date: 2025-01-31
 ---
+
+# Self-Hosted Language Models
+
 ![Project Screenshot](../img/slm-dashboard.png)
 
-## Introduction
+## Overview
+This project provides a self-hosted environment for language model experimentation, eliminating dependencies on external APIs. Built around Open WebUI and secured with Tailscale, it offers developers complete control over their AI tools while maintaining security and privacy.
 
-The advancement of generative AI has created significant interest in language model experimentation among developers. However, many current solutions depend on paid APIs with inherent limitations in flexibility and accessibility. This self-hosted small language model project was developed to provide developers with complete control over their AI tools. Through the integration of **Open WebUI**, the project facilitates comprehensive experimentation capabilities without dependency on external APIs.
+## Architecture
 
-In this post, I'll walk you through the features of the project, the technologies powering it, and why it's the perfect solution for those who want to take control of their AI workflows.
+### Frontend Architecture
+- **UI Framework**: Open WebUI for intuitive language model interaction
+- **Interface**: Modern, responsive design for seamless user experience
+- **Real-time Updates**: WebSocket communication for instant model responses
+- **Customization**: Configurable UI settings for personalized experience
+- **Prompt Management**: System for saving and organizing prompts
 
-## **The Vision**
+### Backend Architecture
+- **Core**: Open WebUI server for handling model interactions
+- **Security**: Tailscale for encrypted networking and access control
+- **Models**: Support for multiple language models with easy switching
+- **Compute**: Optimized inference with CPU and optional GPU acceleration
+- **Storage**: Local file system for model weights and configurations
 
-The goal behind this project is straightforward:
+## Technologies Used
+- **Frontend**: 
+  - Open WebUI for user interface
+  - React-based components
+  - WebSocket for real-time communication
+- **Backend**: 
+  - Python backend services
+  - Model serving frameworks
+  - Docker for containerization
+- **Security**: 
+  - Tailscale for zero-config VPN
+  - End-to-end encryption
+  - Private network isolation
+- **AI Models**: 
+  - Support for multiple small language models
+  - Inference optimization techniques
+- **DevOps**:
+  - Docker Compose for multi-container management
+  - Volume mounting for persistent storage
+  - Resource allocation controls
 
-1.	**Self-Reliance**: Build an AI-powered tool that operates entirely under your control, without depending on external APIs.
+## Features
+- **Language Model Integration**: 
+  - Support for various open-source models
+  - Easy model switching and configuration
+  - Context length management
+- **Security Controls**: 
+  - Tailscale-protected access
+  - Private network deployment
+  - No data sent to external APIs
+- **User Experience**: 
+  - Intuitive chat interface
+  - Conversation management
+  - Prompt templates and history
+- **Performance**: 
+  - Optimized inference for lower-spec hardware
+  - Resource monitoring
+  - Response streaming
+- **Customization**: 
+  - Model parameter adjustments
+  - Temperature and sampling controls
+  - System prompt configuration
 
-2.	**Security First**: Ensure all interactions with the system are secure, thanks to **Tailscale**.
+## Development Process
 
-3.	**Future-Proof Foundation**: Provide a scalable and extensible framework for integrating advanced tools like LangChain and LlamaIndex down the line.
+### Motivation and Evolution
+This project was motivated by several key factors:
+- Growing concerns about data privacy when using commercial AI APIs
+- Need for experimentation without usage limitations or costs
+- Desire for complete control over model selection and configuration
+- Recognition that many developers want AI capabilities without external dependencies
 
-This project is designed for those who want the freedom to experiment with language models in a fully private and customizable environment.
+### Architecture Decisions
+- **Open WebUI over Custom UI**: Leveraged existing open-source UI to accelerate development
+- **Tailscale for Security**: Chose Tailscale for its simplicity and strong security model
+- **Docker Containerization**: Selected for isolation, portability, and ease of deployment
+- **Local Model Execution**: Prioritized on-device inference over API calls for privacy and control
+- **Modular Design**: Structured for future integration of advanced tools like LangChain and LlamaIndex
 
-## **Current Features**
+### Workflow
+1. Docker container setup with base environment and dependencies
+2. Open WebUI installation and configuration
+3. Integration with Tailscale for secure networking
+4. Model download and optimization procedures
+5. System testing and performance tuning
+6. Documentation creation for deployment and usage
 
-**1. Open WebUI Integration**
+### Key Advantages
+- Complete independence from commercial AI providers
+- Enhanced privacy and data security
+- No usage limits or unexpected costs
+- Full control over model selection and parameters
+- Ability to run offline without internet connectivity
 
-At the heart of the project is **Open WebUI**, an open-source platform that makes deploying and managing small language models simple and user-friendly. Whether you're generating text, fine-tuning a model, or exploring new capabilities, Open WebUI provides the tools to get started.
+## Implementation Details
 
-**2. Secured with Tailscale**
+### Docker Configuration
+The project uses Docker Compose for orchestrating multiple containers:
 
-Privacy and security are top priorities. By using **Tailscale**, a zero-config VPN, all access to the application is fully encrypted and restricted to your private network. This ensures that your data and model interactions remain secure.
+```yaml
+version: '3'
+services:
+  openwebui:
+    image: ghcr.io/open-webui/open-webui:main
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./open-webui-data:/app/backend/data
+    environment:
+      - OLLAMA_API_BASE_URL=http://ollama:11434/api
+      - WEBUI_AUTH=true
+      - WEBUI_INTERNET_FACING=false
 
-**3. Customizability**
+  ollama:
+    image: ollama/ollama:latest
+    restart: always
+    volumes:
+      - ./ollama-data:/root/.ollama
+    ports:
+      - "11434:11434"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+```
 
-While the current setup focuses on running and experimenting with language models, the design is flexible, allowing future integration of additional tools and features.
+### Tailscale Integration
+Tailscale is implemented as a separate container for network security:
 
-## **Future Roadmap**
+```yaml
+  tailscale:
+    image: tailscale/tailscale:latest
+    restart: always
+    volumes:
+      - ./tailscale-data:/var/lib/tailscale
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    environment:
+      - TS_AUTH_KEY=${TAILSCALE_AUTH_KEY}
+      - TS_ROUTES=10.0.0.0/8
+      - TS_HOSTNAME=ai-lab
+```
 
-The current version is only the beginning. Here's what's planned for the future:
+## Deployment
 
-- **LangChain Integration**: Enable chaining tasks and building AI-powered workflows.
+The deployment process is straightforward using Docker Compose:
 
-- **LlamaIndex Integration**: Allow querying and interacting with larger datasets.
+```bash
+# Clone the repository
+git clone https://github.com/username/self-hosted-llm.git
+cd self-hosted-llm
 
-- **FastAPI Backend**: Introduce a robust API layer for integrating with external applications.
+# Set Tailscale auth key in .env file
+echo "TAILSCALE_AUTH_KEY=your_tailscale_key_here" > .env
 
-- **Data Persistence**: Add support for local storage or lightweight database solutions to retain user queries and responses.
+# Start the containers
+docker-compose up -d
 
-## **Why Use Tailscale?**
+# Download a model
+docker-compose exec ollama ollama pull llama2:7b
+```
 
-Tailscale adds a critical layer of security to the project, ensuring:
+## Lessons Learned
 
-- **End-to-End Encryption**: All traffic between devices is encrypted, keeping your data private.
+Throughout this project, I gained valuable insights:
+- **Resource Management**: Balancing model size with hardware capabilities is crucial
+- **Security Layers**: Multiple security layers provide better protection than a single approach
+- **Docker Optimization**: Container optimization significantly impacts performance
+- **Model Selection**: Smaller models can provide impressive results with the right configuration
+- **User Experience**: The importance of intuitive interfaces for AI interaction
 
-- **Ease of Use**: No complex network setup is required—Tailscale makes it easy to manage private connections.
+## Future Improvements
 
-- **Scalability**: It's perfect for extending access to other trusted devices or collaborators without compromising security.
-
-## **Future Proofing with Modular Design**
-
-While the project is still evolving, the modular design ensures that future updates (like LangChain and LlamaIndex integration) can be implemented without disrupting the core functionality. This makes the project a long-term solution for developers who want to grow their AI capabilities at their own pace.
-
-## **Final Thoughts**
-
-This project is an exciting step toward democratizing access to small language models. By providing a self-hosted, secure, and flexible solution, it empowers developers to experiment with generative AI while maintaining complete control over their environment.
-
-With future updates planned, this is only the beginning of what the project will offer. Stay tuned for more features, integrations, and possibilities.
-
-This initiative represents an important advancement in providing accessible AI technologies with robust security and customization capabilities.
+Planned enhancements include:
+- Integration with LangChain for advanced AI workflows
+- Addition of LlamaIndex for document-based queries
+- FastAPI backend for custom API development
+- Data persistence layer for chat history and user preferences
+- Fine-tuning capabilities for model customization

@@ -1,5 +1,5 @@
 ---
-title: "PostgreSQL Your Open WebUI"
+title: "PostgreSQL for Open WebUI: Implementation Guide for Production Environments"
 date: 2025-02-02
 ---
 # Setting up PostgreSQL for Open WebUI: A Quick Guide
