@@ -239,3 +239,12 @@ docker run -p 8080:8080 -e RESEND_API_KEY=your_key the-portfolio
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+## License
+
+VitePress 2.0.0-alpha.3 was the original software version used in this repo. The original repo can be found [here](https://github.com/vuejs/vitepress?tab=readme-ov-file). VitePress is available via MIT license. I've copied the original license and placed it in this repo. For a comparison of the original, click [here](https://vitepress.dev/). This project was heavily inspired by the amazing work of the VitePress team. Huge thanks for their contributions to open-source!
+
+## Author
+
+Jasen Carroll \
+10 Mar 2025
