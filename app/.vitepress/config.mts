@@ -105,8 +105,12 @@ function getProjects() {
 function getSidebarPosts() {
   const posts = getPosts()
   return posts.map(post => {
+    // Truncate title at first colon if it exists
+    const truncatedTitle = post.title.includes(':') 
+      ? post.title.split(':')[0] 
+      : post.title
     return {
-      text: post.title,
+      text: `• ${truncatedTitle}`,
       link: post.link
     }
   })
@@ -116,8 +120,12 @@ function getSidebarPosts() {
 function getSidebarProjects() {
   const projects = getProjects()
   return projects.map(project => {
+    // Truncate title at first colon if it exists
+    const truncatedTitle = project.title.includes(':') 
+      ? project.title.split(':')[0] 
+      : project.title
     return {
-      text: project.title,
+      text: `• ${truncatedTitle}`,
       link: project.link
     }
   })
@@ -148,16 +156,14 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Projects',
+        text: 'Projects', link: '/projects',
         items: [
-          { text: 'All Projects', link: '/projects' },
           ...getSidebarProjects()
         ]
       },
       {
-        text: 'Blog',
+        text: 'Blog', link: '/blog',
         items: [
-          { text: 'All Posts', link: '/blog' },
           ...getSidebarPosts()
         ]
       }
