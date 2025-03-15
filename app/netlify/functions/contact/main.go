@@ -1,15 +1,13 @@
 package main
 
 import (
-	"bytes"
 	"context"
 	"encoding/json"
 	"fmt"
-	"io"
 	"net/http"
 
-	"github.com/gin-gonic/gin"
-	"github.com/netlify/functions-go"
+	"github.com/aws/aws-lambda-go/events"
+	"github.com/aws/aws-lambda-go/lambda"
 )
 
 // ContactForm represents the expected form data
@@ -26,24 +24,24 @@ func sendEmail(form ContactForm) error {
 	return nil
 }
 
-// Handler function for Netlify's serverless execution
-func Handler(ctx context.Context, req functions.Request) (functions.Response, error) {
+// Lambda handler function
+func Handler(ctx context.Context, request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 	var form ContactForm
 
 	// Read and log raw request body
-	bodyBytes := req.Body
+	bodyBytes := []byte(request.Body)
 	fmt.Println("Raw request body:", string(bodyBytes))
 
 	// Parse JSON request body
 	if err := json.Unmarshal(bodyBytes, &form); err != nil {
 		fmt.Println("JSON parsing error:", err)
-		return functions.NewJSONResponse(http.StatusBadRequest, gin.H{"error": "Invalid request"}), nil
+		return events.APIGatewayProxyResponse{StatusCode: http.StatusBadRequest, Body: `{"error":"Invalid request"}`}, nil
 	}
 
 	// Validate required fields
 	if form.Name == "" || form.Email == "" || form.Message == "" {
 		fmt.Println("Missing required fields")
-		return functions.NewJSONResponse(http.StatusBadRequest, gin.H{"error": "Missing required fields"}), nil
+		return events.APIGatewayProxyResponse{StatusCode: http.StatusBadRequest, Body: `{"error":"Missing required fields"}`}, nil
 	}
 
 	// Log the received form data
@@ -52,14 +50,14 @@ func Handler(ctx context.Context, req functions.Request) (functions.Response, er
 	// Send email
 	if err := sendEmail(form); err != nil {
 		fmt.Println("Email sending error:", err)
-		return functions.NewJSONResponse(http.StatusInternalServerError, gin.H{"error": "Failed to send email"}), nil
+		return events.APIGatewayProxyResponse{StatusCode: http.StatusInternalServerError, Body: `{"error":"Failed to send email"}`}, nil
 	}
 
 	// Return success response
-	return functions.NewJSONResponse(http.StatusOK, gin.H{"message": "Form submitted and email sent successfully"}), nil
+	return events.APIGatewayProxyResponse{StatusCode: http.StatusOK, Body: `{"message":"Form submitted and email sent successfully"}`}, nil
 }
 
-// Entry point for Netlify
+// Entry point for AWS Lambda
 func main() {
-	functions.Serve(Handler)
+	lambda.Start(Handler)
 }

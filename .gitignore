@@ -3,3 +3,5 @@ app/.vitepress/dist
 app/node_modules*
 app/package-lock.json
 .env
+# Local Netlify folder
+.netlify
