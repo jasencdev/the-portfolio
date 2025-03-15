@@ -1,12 +1,28 @@
 <template>
   <div class="contact-form">
-    <form @submit.prevent="submitForm" method="POST" data-netlify="true">
+    <form 
+      name="contact" 
+      method="POST" 
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      @submit.prevent="submitForm"
+    >
+      <!-- Hidden input required for Netlify to process the form -->
+      <input type="hidden" name="form-name" value="contact" />
+      <p style="display: none;">
+        <label>
+          Don’t fill this out if you’re human:
+          <input name="bot-field" />
+        </label>
+      </p>
+
       <div class="form-group">
         <label for="name">Name</label>
         <input 
           id="name"
           v-model="formData.name"
           type="text" 
+          name="name"
           placeholder="Your name" 
           required
         />
@@ -18,6 +34,7 @@
           id="email"
           v-model="formData.email"
           type="email" 
+          name="email"
           placeholder="Your email address" 
           required
         />
@@ -28,13 +45,14 @@
         <textarea 
           id="message"
           v-model="formData.message"
+          name="message"
           placeholder="Your message" 
           rows="5"
           required
         ></textarea>
       </div>
       
-      <button type="submit">
+      <button type="submit" :disabled="formSubmitted">
         Send Message
       </button>
     </form>
@@ -59,12 +77,15 @@ const formData = reactive({
   message: ''
 })
 
-async function submitForm() {
+async function submitForm(event: Event) {
+  const formElement = event.target as HTMLFormElement;
+  const formDataObject = new FormData(formElement);
+
   try {
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData)
+    // Use fetch to submit the form to Netlify
+    const response = await fetch("/", {
+      method: "POST",
+      body: formDataObject
     });
 
     if (!response.ok) {
@@ -74,7 +95,7 @@ async function submitForm() {
     // Show success message
     formSubmitted.value = true;
 
-    // Reset form data
+    // Reset form fields
     formData.name = '';
     formData.email = '';
     formData.message = '';
