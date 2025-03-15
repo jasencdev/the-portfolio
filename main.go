@@ -78,9 +78,9 @@ func main() {
 	// Add CORS middleware with restricted origin
 	r.Use(func(c *gin.Context) {
 		// Production origin
-		c.Writer.Header().Set("Access-Control-Allow-Origin", "https://jasenc.dev")
+		// c.Writer.Header().Set("Access-Control-Allow-Origin", "https://jasenc.dev")
 		// Staging origin
-		// c.Writer.Header().Set("Access-Control-Allow-Origin", "https://the-portfolio-production.up.railway.app/")
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "https://the-portfolio-production.up.railway.app/")
 		// Development origin
 		// c.Writer.Header().Set("Access-Control-Allow-Origin", "http://localhost:8080")
 
