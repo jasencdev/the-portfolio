@@ -5,7 +5,7 @@ date: 2025-01-31
 
 # Self-Hosted Language Models: Building a Bare Metal AI Development Environment
 
-![Project Screenshot](../img/slm-dashboard.png)
+![Project Screenshot](../assets/img/slm-dashboard.png)
 
 ## Overview
 This project provides a self-hosted environment for language model experimentation, eliminating dependencies on external APIs. Built around Open WebUI and secured with Tailscale, it offers developers complete control over their AI tools while maintaining security and privacy through a bare metal approach.

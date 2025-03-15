@@ -6,7 +6,7 @@ hero:
   name: "Full Stack Solutions. Built."
   tagline: Currently pursuing my Master's in Software Engineering with a focus on data engineering and generative AI. This portfolio showcases my projects as I explore the fascinating intersection of data pipelines and AI technologies. I'm documenting my learning journey through apps that scale, data systems, and generative AI tools.
   image:
-    src: https://raw.githubusercontent.com/jasencdev/the-portfolio/5874337ff4af521fda53fb3193075b45349a140c/black-logo-nobackground.png
+    src: img/black-logo-no-background.svg
   actions:
     - theme: brand
       text: See Projects

@@ -144,7 +144,7 @@ export default defineConfig({
       "script", {},
       `window.dataLayer = window.dataLayer || []; function gtag(){window.dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-DBYEFVKWSM');`
     ],
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: 'https://raw.githubusercontent.com/jasencdev/the-portfolio/refs/heads/main/app/img/favicon.ico' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: 'img/favicon.ico' }],
     ['meta', { name: 'theme-color', content: '#ffffff' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }],
     ['meta', { name: 'description', content: 'Portfolio for jasenc.dev' }],
