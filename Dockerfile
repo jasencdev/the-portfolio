@@ -20,7 +20,7 @@ WORKDIR /build
 
 # Copy Go modules manifests
 COPY go.mod go.sum ./
-RUN go mod download
+RUN go mod tidy && go mod download
 
 # Copy source code
 COPY main.go ./
