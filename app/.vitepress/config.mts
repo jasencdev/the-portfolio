@@ -138,9 +138,17 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#ffffff' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }],
     ['meta', { name: 'description', content: 'Portfolio for jasenc.dev' }],
+    ['meta', { property: 'og:title', content: 'Jasen Carroll | Software Engineer Portfolio' }],
+    ['meta', { property: 'og:description', content: 'Explore projects, blog posts, and DevOps tutorials from Jasen Carroll.' }],
+    ['meta', { property: 'og:url', content: 'https://jasenc.dev' }],
+    ['meta', { property: 'og:type', content: 'website' }],
   ],
-  title: "jasenc.dev",
-  description: "Portfolio for jasenc.dev",
+  sitemap: {
+    hostname: 'https://jasenc.dev'
+  },
+  title: "jasenc.dev | Jasen Carroll | Software Engineer",
+  titleTemplate: "jasenc.dev | Jasen Carroll | Software Engineer",
+  description: "Jasen Carroll is a software engineer with expertise in Go, Python, DevOps, and backend development. Explore projects, blog posts, and career insights.",
   themeConfig: {
     search: {
       provider: 'local'

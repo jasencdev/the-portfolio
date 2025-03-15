@@ -1,0 +1,20 @@
+User-agent: *
+Disallow: /404.html
+Disallow: /private/
+Disallow: /drafts/
+
+# Allow search engines to index everything else
+Allow: /
+
+# Sitemap reference (important for indexing)
+Sitemap: https://jasenc.dev/sitemap.xml
+
+# Optional: Prevent specific bots from crawling
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Optional: Rate-limit crawlers (to avoid overloading your site)
+Crawl-delay: 10
