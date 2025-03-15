@@ -146,7 +146,7 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://jasenc.dev'
   },
-  title: "jasenc.dev | Jasen Carroll | Software Engineer",
+  title: "jasenc.dev",
   titleTemplate: "jasenc.dev | Jasen Carroll | Software Engineer",
   description: "Jasen Carroll is a software engineer with expertise in Go, Python, DevOps, and backend development. Explore projects, blog posts, and career insights.",
   themeConfig: {
