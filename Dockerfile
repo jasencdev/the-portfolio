@@ -5,7 +5,7 @@ FROM node:18-alpine AS frontend-builder
 WORKDIR /app
 
 # Copy package.json and install dependencies
-COPY app/package*.json ./
+COPY app/package.json ./
 RUN npm install
 
 # Copy VitePress source code
