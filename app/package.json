@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "vitepress dev",
-    "build": "vitepress build && vite build && cp public/robots.txt .vitepress/dist/robots.txt",
+    "build": "vitepress build && vite build && cp public/robots.txt .vitepress/dist/robots.txt && rm -rf .vitepress/dist/dist",
     "preview": "vitepress preview",
     "test": "vitest run",
     "test:watch": "vitest"
