@@ -12,7 +12,7 @@ RUN npm install
 COPY app/ ./
 
 # Build the VitePress site
-RUN npm run docs:build
+RUN npm run build
 
 # Stage 2: Build the Go server
 FROM golang:1.24-alpine AS backend-builder
