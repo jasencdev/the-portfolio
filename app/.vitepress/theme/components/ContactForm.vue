@@ -1,6 +1,6 @@
 <template>
   <div class="contact-form">
-    <form @submit.prevent="submitForm">
+    <form @submit.prevent="submitForm" method="POST" data-netlify="true">
       <div class="form-group">
         <label for="name">Name</label>
         <input 
