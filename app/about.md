@@ -13,8 +13,8 @@ hero:
       text: Contact Me
       link: /contact
     - theme: alt
-      text: LinkedIn
-      link: https://www.linkedin.com/in/jasenc/
+      text: Resume
+      link: about/resume
 
 ---
 
