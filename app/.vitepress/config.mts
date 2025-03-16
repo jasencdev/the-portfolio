@@ -45,7 +45,7 @@ function getPosts() {
     return {
       title: data.title || filename,
       date: isoDate, // Store as ISO date string for reliable parsing
-      link: `/posts/${filename}`
+      link: `/blog/${filename}`
     }
   })
   
