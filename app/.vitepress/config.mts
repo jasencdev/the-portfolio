@@ -7,7 +7,7 @@ import matter from 'gray-matter'
 
 // Function to get all posts
 function getPosts() {
-  const postsDir = path.join(__dirname, '../posts')
+  const postsDir = path.join(__dirname, '../blog')
   const files = fs.readdirSync(postsDir).filter(file => file.endsWith('.md'))
   
   const posts = files.map(file => {
