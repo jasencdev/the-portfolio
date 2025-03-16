@@ -18,12 +18,12 @@ hero:
 features:
   - title: Full Stack Engineering
     details: Specialized in backend development with comprehensive proficiency across the full technology stack.
-    link: https://github.com/jasencdev/the-portfolio
+    link: /projects/flask-microblog
   - title: Data Science & Data Engineering
     details: Expertise in data architecture with emphasis on logical principles and proper implementation methodologies.
     link: https://github.com/jasencdev/the-portfolio
   - title: Generative AI
     details: It's always important to keep up with technology and leverage it to achieve greater scalability. 🚀
-    link: https://github.com/jasencdev/the-portfolio
+    link: /projects/language-model
 ---
 
