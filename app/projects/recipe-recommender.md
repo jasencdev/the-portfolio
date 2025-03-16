@@ -17,7 +17,6 @@ This project is a recipe recommendation system that leverages machine learning t
 
 ### Application Architecture
 - **ML Service**: Python backend with scikit-learn for clustering
-- **API Layer**: FastAPI endpoints exposing recommendation functionality
 - **Frontend**: Streamlit interface for user interactions
 
 ## Technologies Used
@@ -60,7 +59,6 @@ This project began as an exploration of practical applications for clustering al
 ### Architecture Decisions
 - **K-means over Neural Models**: Chose K-means for interpretability and deployment simplicity
 - **Streamlit over React**: Selected Streamlit for rapid ML application development
-- **FastAPI Backend**: Implemented for performance and easy async support
 - **Railway Deployment**: Utilized for simplified containerized deployment
 
 ### Workflow
@@ -68,8 +66,7 @@ This project began as an exploration of practical applications for clustering al
 2. Feature engineering to convert text ingredients to numerical vectors, filtering only recipes with a complexity score ≤100 and ratings ≥4.
 3. K-means model training and optimal k determination using elbow and silhouette analysis.
 4. Streamlit frontend development with responsive design
-5. API layer implementation with FastAPI
-6. Containerization and deployment pipeline setup
+5. Containerization and deployment pipeline setup
 
 ### Key Advantages
 - Lightweight model that can run in resource-constrained environments
@@ -138,7 +135,7 @@ Railway deployment is configured with environment variables for API keys and res
 ## Lessons Learned
 
 Throughout this project, I gained valuable insights:
-- **Data Quality Challenges**: Inconsistent ingredient naming and missing values required extensive preprocessing.
+- **Data Quality Challenges**: None. Whatsoever. This was a great dataset and I am thankful. 
 - **Clustering Efficiency**: Clustering improved efficiency over traditional search-based methods.
 - **User Experience Design**: ML applications require intuitive interfaces to be useful.
 
