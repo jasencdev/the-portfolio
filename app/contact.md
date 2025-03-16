@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: Contact Me
+  name: Contact
   tagline: Have a question or want to work together?
 
 ---
