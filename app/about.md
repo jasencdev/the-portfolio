@@ -38,11 +38,11 @@ For example, when developing this portfolio site, I leveraged modern tools like 
 
 ### Strategic Technical Focus
 
-My technical focus has been deliberately cultivated around high-value areas where I can provide significant impact:
+My current trajectory is shifting toward data engineering and selective bespoke digitalization—targeted, high-leverage technical work that transforms how businesses extract, structure, and utilize data:
 
-- **Backend Development**: Building robust APIs and services that power applications
-- **DevOps and Infrastructure**: Creating reliable deployment pipelines and infrastructure
-- **Data Engineering**: Designing systems that effectively process, analyze, and leverage data
+- **Data Engineering**: Architecting scalable pipelines and platforms for data transformation and intelligence
+- **Backend Systems**: Supporting data-heavy workflows and business logic at scale
+- **Selective Bespoke Digitalization**: Crafting domain-specific solutions that unlock value through automation and insight
 
 I've complemented my practical experience with formal education, pursuing a Master's in Software Engineering with additional certifications in Data Science. This combination of hands-on experience and theoretical knowledge allows me to tackle complex engineering challenges with both technical depth and architectural breadth.
 
@@ -60,9 +60,9 @@ This business-aware engineering approach is particularly valuable in industries 
 
 As I continue developing my expertise, I'm focused on several key areas:
 
-- Advanced cloud infrastructure patterns and practices
-- Data engineering pipelines that enable AI/ML workflows
-- High-performance backend systems and APIs
+- Scalable data platforms and real-time processing architectures
+- Intelligent data workflows that support AI/ML systems
+- Strategic bespoke systems tailored to high-value business domains
 
 These interests align with my goal of building increasingly sophisticated software systems that can handle complex business requirements while maintaining performance and reliability.
 

@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "Full Stack Solutions. Built."
-  tagline: Currently pursuing my Master's in Software Engineering with a focus on data engineering and generative AI. This portfolio showcases my projects as I explore the fascinating intersection of data pipelines and AI technologies. I'm documenting my learning journey through apps that scale, data systems, and generative AI tools.
+  tagline: Currently pursuing my Master's in Software Engineering with a focus on data engineering and bespoke digitalization. This portfolio documents my transition into architecting scalable data systems and crafting domain-specific AI-driven solutions.
   image:
     src: img/black-logo-no-background.svg
   actions:
@@ -19,11 +19,10 @@ features:
   - title: Full Stack Engineering
     details: Specialized in backend development with comprehensive proficiency across the full technology stack.
     link: /projects/flask-microblog
-  - title: Data Science & Data Engineering
-    details: Expertise in data architecture with emphasis on logical principles and proper implementation methodologies.
+  - title: Data Engineering & Digitalization
+    details: Building intelligent data pipelines and digital systems tailored to high-value, domain-specific workflows.
     link: /projects/recipe-recommender
   - title: Generative AI
-    details: It's always important to keep up with technology and leverage it to achieve greater scalability. 🚀
+    details: Applying generative AI to enhance automation, decision-making, and system scalability.
     link: /projects/language-model
 ---
-
