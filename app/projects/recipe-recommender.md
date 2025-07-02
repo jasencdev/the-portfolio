@@ -8,6 +8,9 @@ date: 2025-03-16
 ## Overview
 This project is a recipe recommendation system that leverages machine learning to suggest recipes based on recipe complexity and preparation time. Using K-means clustering for similarity matching, the application provides a practical demonstration of deploying ML models in production with modern MLOps practices.
 
+## Live Link
+[Recipe Recommender](https://recipe-recommender.jasenc.dev/)
+
 ## Architecture
 
 ### Data Architecture
