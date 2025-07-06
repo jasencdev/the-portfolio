@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "About"
   text: Jasen Carroll
-  tagline: Software engineer proficient in full stack development, architecture, and generative AI. My technical portfolio spans multiple languages and frameworks, enabling contributions across the entire development lifecycle. My expertise is focused primarily on Backend Development, Data Engineering, and DevOps. Let's ship!
+  tagline: I build tools and frameworks that make development teams move faster. Full-stack engineer focused on creating solutions that unlock team velocity and business value.
   image:
     src: https://avatars.githubusercontent.com/u/108644550?v=4
   actions:
@@ -18,62 +18,36 @@ hero:
 
 ---
 
-## My Software Engineering Journey
+## Building Tools That Make Teams Move Faster
 
-### An Unconventional Path
+### Current Focus
 
-My journey into software engineering took a non-traditional route. Before becoming a developer, I built my career in the medical device industry, working in quality assurance and project management. This background has given me a unique perspective that extends beyond code—I understand the full product lifecycle, risk management, and quality processes that are essential in mission-critical systems.
+I create production-ready frameworks and tools that eliminate friction in the development process. Recently built [Bun Stack](https://bun-stack.jasenc.dev), a complete full-stack framework in three afternoons that gets teams from idea to deployed application in minutes. This kind of rapid execution with robust architecture is what I specialize in.
 
-This experience shaped my approach to software development: I focus on **building robust, well-architected systems** that solve real business problems while maintaining high quality standards.
+### Technical Approach
 
-### Technical Execution and Delivery Focus
+My background in pharmaceutical quality engineering taught me systems thinking and reliability standards—but I apply that rigor at startup speed. I understand that software exists to solve business problems, so I build tools that balance immediate productivity gains with long-term maintainability.
 
-My engineering philosophy centers on shipping working solutions. While many developers get caught in an endless cycle of optimization before deployment, I prioritize getting functional systems into production and iterating from there. This approach has served me well, allowing me to:
+### What Sets Me Apart
 
-- Deploy multiple applications in rapid succession to test ideas
-- Build complete solutions like this portfolio site in compressed timeframes
-- Maintain momentum by focusing on incremental improvements
+I don't just write code—I create the frameworks, tools, and systems that unlock entire team velocity. Whether it's a development framework or cost-optimized AI infrastructure, I focus on building solutions that have multiplier effects across organizations.
 
-For example, when developing this portfolio site, I leveraged modern tools like VitePress and Go to create a performant, maintainable solution that could evolve with my needs rather than trying to build the perfect site from the start.
+**Technical philosophy:**
+- **Ship working solutions** over endless optimization
+- **Build for teams** not just individual productivity  
+- **Systems thinking** from regulated industry experience
+- **Business impact** drives technical decisions
 
-### Strategic Technical Focus
+### Engineering Background
 
-My current trajectory is shifting toward data engineering and selective bespoke digitalization—targeted, high-leverage technical work that transforms how businesses extract, structure, and utilize data:
+My non-traditional path from medical device quality engineering brings a unique perspective. I understand the full product lifecycle, risk management, and quality processes essential in mission-critical systems. This experience shaped my approach to building robust, well-architected solutions that teams can rely on.
 
-- **Data Engineering**: Architecting scalable pipelines and platforms for data transformation and intelligence
-- **Backend Systems**: Supporting data-heavy workflows and business logic at scale
-- **Selective Bespoke Digitalization**: Crafting domain-specific solutions that unlock value through automation and insight
+### Tech Stack
 
-I've complemented my practical experience with formal education, pursuing a Master's in Software Engineering with additional certifications in Data Science. This combination of hands-on experience and theoretical knowledge allows me to tackle complex engineering challenges with both technical depth and architectural breadth.
+Modern JavaScript (React, TypeScript, Bun.js), cloud infrastructure, AI integration, full-stack development. I choose proven technologies that let teams focus on building features instead of debugging framework issues.
 
-### Engineering with Business Context
+### Looking Ahead
 
-What distinguishes my approach is the integration of business context into technical decisions. Having worked across different roles, I understand that software exists to solve problems and deliver value. This perspective influences how I:
+I'm targeting technical leadership roles where I can combine strategic thinking with hands-on execution. Most energized by environments that value shipping working solutions and iterating rapidly.
 
-- Evaluate technical trade-offs with business impacts in mind
-- Communicate complex technical concepts clearly to diverse stakeholders
-- Design solutions that balance immediate needs with long-term sustainability
-
-This business-aware engineering approach is particularly valuable in industries where reliability, compliance, and scalability are critical concerns.
-
-### Technical Interests and Future Directions
-
-As I continue developing my expertise, I'm focused on several key areas:
-
-- Scalable data platforms and real-time processing architectures
-- Intelligent data workflows that support AI/ML systems
-- Strategic bespoke systems tailored to high-value business domains
-
-These interests align with my goal of building increasingly sophisticated software systems that can handle complex business requirements while maintaining performance and reliability.
-
-### Technical Philosophy
-
-At its core, my technical philosophy combines three essential elements:
-
-1. **Pragmatic solutions** that prioritize working software over theoretical perfection
-2. **Architectural thinking** that considers long-term maintenance and scalability
-3. **Business alignment** that ensures technical decisions support organizational goals
-
-This approach allows me to deliver systems that not only meet technical requirements but also provide tangible business value in a timely manner.
-
-I'm continuously building, learning, and refining my craft to create software that makes a meaningful impact.
+*Continuously building, learning, and creating software that makes teams more effective.*

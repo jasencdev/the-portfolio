@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "Full Stack Solutions. Built."
-  tagline: Currently pursuing my Master's in Software Engineering with a focus on data engineering and bespoke digitalization. This portfolio documents my transition into architecting scalable data systems and crafting domain-specific AI-driven solutions.
+  name: "Tools That Make Teams Move Faster"
+  tagline: I build frameworks, tools, and systems that unlock development velocity. Recently shipped Bun Stack - a complete full-stack framework built in three afternoons that gets teams from idea to deployed app in minutes.
   image:
     src: img/black-logo-no-background.svg
   actions:
@@ -16,13 +16,13 @@ hero:
       link: /blog
 
 features:
-  - title: Full Stack Engineering
-    details: Specialized in backend development with comprehensive proficiency across the full technology stack.
-    link: /projects/flask-microblog
-  - title: Data Engineering & Digitalization
-    details: Building intelligent data pipelines and digital systems tailored to high-value, domain-specific workflows.
-    link: /projects/recipe-recommender
-  - title: Generative AI
-    details: Applying generative AI to enhance automation, decision-making, and system scalability.
+  - title: Framework Development
+    details: Building production-ready frameworks like Bun Stack that provide complete developer experiences out of the box.
+    link: https://bun-stack.jasenc.dev
+  - title: Rapid Execution
+    details: Shipping complete applications and tools in compressed timeframes while maintaining production quality and reliability.
+    link: /projects/bun-stack
+  - title: Cost-Optimized AI
+    details: Local AI implementations achieving 60%+ cost savings vs cloud solutions without sacrificing performance.
     link: /projects/language-model
 ---
