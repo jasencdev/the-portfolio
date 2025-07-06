@@ -18,25 +18,34 @@ hero:
 
 ---
 
-## Building Tools That Make Teams Move Faster
+## Strategic Problem Solving Through Technology
 
 ### Current Focus
 
-I create production-ready frameworks and tools that eliminate friction in the development process. Recently built [Bun Stack](https://bun-stack.jasenc.dev), a complete full-stack framework in three afternoons that gets teams from idea to deployed application in minutes. This kind of rapid execution with robust architecture is what I specialize in.
+I identify productivity gaps in development workflows and build complete solutions to solve them. Recently saw teams struggling with the Rails vs modern JS productivity gap, so I built [Bun Stack](https://bun-stack.jasenc.dev) - a complete framework that gets teams from idea to deployed application in minutes instead of hours.
 
-### Technical Approach
+### Unique Value Proposition
 
-My background in pharmaceutical quality engineering taught me systems thinking and reliability standards—but I apply that rigor at startup speed. I understand that software exists to solve business problems, so I build tools that balance immediate productivity gains with long-term maintainability.
+My background combines **MBA strategic thinking, AI expertise, and full-stack technical execution** - a rare combination that allows me to both identify market needs and build the complete solutions to address them. I understand business requirements, emerging technology trends, and have the technical capability to deliver production-ready systems.
+
+**Strategic + Technical Projects:**
+- **Bun Stack** - Identified developer productivity gap, built complete framework with user management, admin tools, and production deployment
+- **AI Cost Optimization** - Architected local AI solutions delivering 60%+ cost savings while maintaining performance  
+- **Portfolio Platform** - Built with embedded AI capabilities and modern tooling to demonstrate technical leadership
 
 ### What Sets Me Apart
 
-I don't just write code—I create the frameworks, tools, and systems that unlock entire team velocity. Whether it's a development framework or cost-optimized AI infrastructure, I focus on building solutions that have multiplier effects across organizations.
+I bridge the gap between business strategy and technical execution. While many engineers focus solely on implementation, I combine **MBA-level strategic thinking** with deep technical skills to identify problems worth solving and build complete solutions that drive business impact.
 
-**Technical philosophy:**
-- **Ship working solutions** over endless optimization
-- **Build for teams** not just individual productivity  
-- **Systems thinking** from regulated industry experience
-- **Business impact** drives technical decisions
+**Strategic capabilities:**
+- **Product thinking** - Identifying market gaps and user needs
+- **Business impact** - Understanding ROI, cost optimization, and team productivity metrics  
+- **Technical leadership** - Full-stack execution with systems that scale across organizations
+- **AI integration** - Leveraging emerging technologies for competitive advantage
+
+### Target Role Alignment
+
+Perfect fit for **Technical Product Manager, VP Engineering, or Solutions Engineering** roles where success requires both strategic vision and hands-on technical leadership. I can identify what to build, architect the solution, and execute the implementation.
 
 ### Engineering Background
 
@@ -48,6 +57,6 @@ Modern JavaScript (React, TypeScript, Bun.js), cloud infrastructure, AI integrat
 
 ### Looking Ahead
 
-I'm targeting technical leadership roles where I can combine strategic thinking with hands-on execution. Most energized by environments that value shipping working solutions and iterating rapidly.
+Targeting **Solutions Engineering, Technical Product Manager, or VP Engineering** roles where I can combine strategic product thinking with hands-on technical leadership. Most effective in fast-growing companies that value identifying market opportunities and building complete solutions to capture them.
 
-*Continuously building, learning, and creating software that makes teams more effective.*
+*Continuously identifying problems worth solving and building the technical solutions to address them.*
