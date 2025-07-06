@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "Tools That Make Teams Move Faster"
-  tagline: I build frameworks, tools, and systems that unlock development velocity. Recently shipped Bun Stack - a complete full-stack framework built in three afternoons that gets teams from idea to deployed app in minutes.
+  tagline: I build frameworks, tools, and systems that unlock development velocity. Recently shipped Bun Stack - a complete full-stack framework built in a week that gets teams from idea to deployed app in minutes.
   image:
     src: img/black-logo-no-background.svg
   actions:

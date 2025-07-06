@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "About"
   text: Jasen Carroll
-  tagline: I build tools and frameworks that make development teams move faster. Full-stack engineer focused on creating solutions that unlock team velocity and business value.
+  tagline: I build tools and frameworks that help teams move faster — shipping infrastructure-grade systems with startup-grade velocity.
   image:
     src: https://avatars.githubusercontent.com/u/108644550?v=4
   actions:
@@ -15,48 +15,77 @@ hero:
     - theme: alt
       text: Resume
       link: about/resume
-
+      
 ---
 
 ## Strategic Problem Solving Through Technology
 
 ### Current Focus
 
-I identify productivity gaps in development workflows and build complete solutions to solve them. Recently saw teams struggling with the Rails vs modern JS productivity gap, so I built [Bun Stack](https://bun-stack.jasenc.dev) - a complete framework that gets teams from idea to deployed application in minutes instead of hours.
+I design and build solutions that eliminate friction in development workflows.
+Recently, I saw teams stuck between the productivity of Rails and the sprawl of modern JavaScript tooling — so I built [**Bun Stack**](https://bun-stack.jasenc.dev): a curated fullstack framework that gets you from idea to production in 30 seconds.
+
+### My Thesis
+
+> **Open-sourcing competence at scale.**
+> I build systems that distill years of engineering into tools others can use instantly.
 
 ### Unique Value Proposition
 
-My background combines **MBA strategic thinking, AI expertise, and full-stack technical execution** - a rare combination that allows me to both identify market needs and build the complete solutions to address them. I understand business requirements, emerging technology trends, and have the technical capability to deliver production-ready systems.
+I operate at the intersection of **business strategy, AI, and full-stack technical execution** — a combination that enables me to spot market gaps, architect viable solutions, and ship production-ready platforms.
 
-**Strategic + Technical Projects:**
-- **Bun Stack** - Identified developer productivity gap, built complete framework with user management, admin tools, and production deployment
-- **AI Cost Optimization** - Architected local AI solutions delivering 60%+ cost savings while maintaining performance  
-- **Portfolio Platform** - Built with embedded AI capabilities and modern tooling to demonstrate technical leadership
+---
+
+## Strategic + Technical Projects
+
+* **Bun Stack** – Built a full-stack platform seed with routing, auth, admin, and deploy in <30s
+* **AI Cost Optimization** – Architected local AI pipelines with 60%+ cost reduction vs cloud APIs
+* **Portfolio Platform** – Integrated AI-driven components into a production-grade developer portfolio
+
+---
 
 ### What Sets Me Apart
 
-I bridge the gap between business strategy and technical execution. While many engineers focus solely on implementation, I combine **MBA-level strategic thinking** with deep technical skills to identify problems worth solving and build complete solutions that drive business impact.
+Most engineers ship features.
+I ship **leverage** — frameworks, systems, and workflows that improve speed, reliability, and clarity across entire teams.
 
-**Strategic capabilities:**
-- **Product thinking** - Identifying market gaps and user needs
-- **Business impact** - Understanding ROI, cost optimization, and team productivity metrics  
-- **Technical leadership** - Full-stack execution with systems that scale across organizations
-- **AI integration** - Leveraging emerging technologies for competitive advantage
+* **Product thinking** – Translate ambiguity into buildable platforms
+* **Business impact** – Optimize for ROI, developer velocity, and team productivity
+* **Technical leadership** – End-to-end architecture that scales cleanly
+* **AI integration** – Embed practical machine learning into user-facing and infrastructure layers
 
-### Target Role Alignment
+---
 
-Perfect fit for **Technical Product Manager, VP Engineering, or Solutions Engineering** roles where success requires both strategic vision and hands-on technical leadership. I can identify what to build, architect the solution, and execute the implementation.
+## Background
 
-### Engineering Background
+My path began in **medical device quality engineering**, where system failures weren’t options.
+That experience shaped my approach to software: risk-aware, outcome-driven, and built for scale.
+I didn’t pivot to tech — I translated regulated systems thinking into developer platforms.
 
-My non-traditional path from medical device quality engineering brings a unique perspective. I understand the full product lifecycle, risk management, and quality processes essential in mission-critical systems. This experience shaped my approach to building robust, well-architected solutions that teams can rely on.
+---
 
-### Tech Stack
+## Tech Stack
 
-Modern JavaScript (React, TypeScript, Bun.js), cloud infrastructure, AI integration, full-stack development. I choose proven technologies that let teams focus on building features instead of debugging framework issues.
+* **Frontend:** React, TypeScript, Tailwind
+* **Backend:** Bun.js, SQLite/Postgres, Drizzle ORM
+* **Infra:** CI/CD, Docker, Railway
+* **AI:** Local-first LLMs via Open WebUI, Ollama, and custom orchestration
 
-### Looking Ahead
+I use proven technologies that reduce time-to-value — so teams can focus on building, not debugging.
 
-Targeting **Solutions Engineering, Technical Product Manager, or VP Engineering** roles where I can combine strategic product thinking with hands-on technical leadership. Most effective in fast-growing companies that value identifying market opportunities and building complete solutions to capture them.
+---
 
-*Continuously identifying problems worth solving and building the technical solutions to address them.*
+## Looking Ahead
+
+I'm targeting roles where **strategic clarity meets technical execution**:
+
+* **Technical Product Manager** – Understand the problem, define the vision, ship the solution
+* **Solutions Engineer** – Rapidly build working systems to close deals and drive adoption
+* **VP Engineering** – Architect the platform, lead the team, scale the system
+
+Most effective in fast-moving companies that need leverage, not just velocity.
+
+---
+
+> I'm here to identify problems worth solving — and build the systems that solve them.
+> Then open-source the leverage.
