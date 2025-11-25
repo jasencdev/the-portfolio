@@ -13,7 +13,7 @@ hero:
 
 ## Summary
 
-Full-stack data engineer with 10+ years in regulated environments and risk management, specializing in machine learning, database architecture, and production data pipelines. I build scalable data platforms, ML-powered systems, and resilient applications that unlock insights and drive strategic decision-making for teams. I combine data engineering, statistical modeling, and validation engineering expertise to transform raw data into actionable business intelligence while ensuring compliance and quality standards.
+Senior Quality Engineer with 10+ years in regulated environments, now specializing in backend systems, infrastructure automation, and production applications. I build scalable web platforms, self-hosted infrastructure, and resilient applications using modern tooling. I combine software engineering, data modeling, and systems thinking to deliver reliable solutions while maintaining quality standards.
 
 ## Education
 
@@ -33,27 +33,32 @@ Full-stack data engineer with 10+ years in regulated environments and risk manag
 
 ## Experience
 
-### **Full-Stack Data Engineer** — *jasenc.dev* — Sep 2024 – Present
+### **Full-Stack Engineer** — *jasenc.dev* — Sep 2024 – Present
 
-**Machine Learning & Data Analytics:**
+**Infrastructure & DevOps:**
 
-* Designed and deployed a K-means clustering-based recipe recommendation engine using Python, scikit-learn, and Streamlit. Optimized clustering using silhouette scoring and feature selection.
-* Built full ML pipeline: data preprocessing, model training, containerized deployment with Docker to Railway. Achieved <1s latency under production load.
-* Architected and deployed local-first LLM infrastructure using Open WebUI + Ollama on bare metal Ubuntu. Self-hosted Microsoft Phi-4 with custom APIs for inference, cutting cloud AI spend by over 60%.
+* Deployed two-node K3s Kubernetes cluster on Intel NUCs over Tailscale mesh VPN, enabling secure remote access to self-hosted services from anywhere without exposing ports or configuring firewalls.
+* Configured n8n workflow automation platform as first cluster workload with persistent storage, NodePort services, and HTTPS via Tailscale Serve.
+* Architected and deployed local-first LLM infrastructure using Open WebUI + Ollama on bare metal Ubuntu. Self-hosted Microsoft Phi-4 with custom APIs for inference, reducing cloud AI costs by over 60%.
+* Secured self-hosted infrastructure using Tailscale VPN with end-to-end encryption for private network deployment.
 
-**Data Infrastructure & Database Engineering:**
+**Full-Stack Development:**
 
-* Built [**Bun Stack**](https://bun-stack.jasenc.dev): a production-grade fullstack framework using Bun, React, and TypeScript with Drizzle ORM for database resilience. Implemented SQLite fallback mechanism when PostgreSQL connections fail, ensuring zero downtime data access.
-* Integrated PostgreSQL as backend for Open WebUI production environments, improving stability and scalability through optimized permissions and proper database configuration.
+* Built [**Bun Stack**](https://bun-stack.jasenc.dev): a production-grade fullstack framework using Bun, React, and TypeScript with Drizzle ORM. Implemented SQLite fallback mechanism when PostgreSQL connections fail, ensuring zero downtime data access.
+* Architected modern portfolio site using VitePress/Vue frontend with Go/Gin backend, featuring server-side rendering, automated CI/CD, and multi-platform deployment.
 * Developed production-ready Flask microblogging platform with PostgreSQL backend, implementing database migrations, user authentication, and social features with comprehensive data modeling.
 * Implemented full-text search capabilities using Elasticsearch for content discovery, relevance-based ranking, and fuzzy matching across large datasets.
 
-**Full-Stack Development & Platform Engineering:**
+**Machine Learning & Data:**
 
-* Architected modern portfolio site using VitePress/Vue frontend with Go/Gin backend, featuring server-side rendering, automated CI/CD, and multi-platform deployment.
+* Designed and deployed a K-means clustering-based recipe recommendation engine using Python, scikit-learn, and Streamlit. Optimized clustering using silhouette scoring and feature selection.
+* Built full ML pipeline: data preprocessing, model training, containerized deployment with Docker to Railway. Achieved <1s latency under production load.
+* Integrated PostgreSQL as backend for Open WebUI production environments, improving stability and scalability through optimized permissions and proper database configuration.
+
+**Platform & CI/CD:**
+
 * Implemented continuous delivery pipeline using Railway for feature branch deployments, maintaining always-deployable code and eliminating integration surprises.
 * Migrated applications from Heroku to Railway, achieving 40% cost reduction while improving performance through usage-based pricing and faster container spin-up times.
-* Secured self-hosted AI infrastructure using Tailscale VPN with end-to-end encryption for private network deployment.
 
 ### **Senior Quality Engineer** — *PCI* — Sep 2023 – Present
 
@@ -63,13 +68,13 @@ Full-stack data engineer with 10+ years in regulated environments and risk manag
 * Developed standard operating procedures for performing statistical techniques in calculating capability of critical-to-quality attributes.
 * Implemented change controls for software solutions in dose accuracy calculation, including validation of computational models and oversight of automated scale solutions.
 
+### **Quality Engineering & Validation** — *Various Companies* — 2012 – 2023
+
 **Change Control & Corrective / Preventive Actions:**
 
-* Lead Quality Engineer for auto-injector sustainment and new product introduction for pharmaceutical accounts (Eli Lilly, Merck, GSK).
-* Developed standard operating procedures for performing statistical techniques in calculating capability of critical-to-quality attributes.
-* Implemented change controls for software solutions in dose accuracy calculation, including validation of computational models and oversight of automated scale solutions.
-
-### **Quality Engineering & Validation** — *Various Companies* — 2012 – 2023
+* Managed cross-functional change control processes for manufacturing and quality systems, ensuring traceability and regulatory compliance.
+* Led root cause analysis investigations using 8D methodology, reducing repeat deviations by 30% through systematic corrective action implementation.
+* Coordinated CAPA activities across multiple product lines, maintaining FDA audit readiness and ensuring timely closure of quality events.
 
 **Systems & Process Validation:**
 
