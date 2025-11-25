@@ -18,74 +18,54 @@ hero:
       
 ---
 
-## Strategic Problem Solving Through Technology
-
-### Current Focus
-
-I design and build solutions that eliminate friction in development workflows.
-Recently, I saw teams stuck between the productivity of Rails and the sprawl of modern JavaScript tooling — so I built [**Bun Stack**](https://bun-stack.jasenc.dev): a curated fullstack framework that gets you from idea to production in 30 seconds.
-
-### My Thesis
-
-> **Open-sourcing competence at scale.**
-> I build systems that distill years of engineering into tools others can use instantly.
-
-### Unique Value Proposition
-
-I operate at the intersection of **business strategy, AI, and full-stack technical execution** — a combination that enables me to spot market gaps, architect viable solutions, and ship production-ready platforms.
+## About
 
 ---
-
-## Strategic + Technical Projects
-
-* **Bun Stack** – Built a full-stack platform seed with routing, auth, admin, and deploy in <30s
-* **AI Cost Optimization** – Architected local AI pipelines with 60%+ cost reduction vs cloud APIs
-* **Portfolio Platform** – Integrated AI-driven components into a production-grade developer portfolio
-
+layout: page
+title: About
 ---
 
-### What Sets Me Apart
+# About
 
-Most engineers ship features.
-I ship **leverage** — frameworks, systems, and workflows that improve speed, reliability, and clarity across entire teams.
+I'm a full-stack engineer building production systems, developer tools, and self-hosted infrastructure.
 
-* **Product thinking** – Translate ambiguity into buildable platforms
-* **Business impact** – Optimize for ROI, developer velocity, and team productivity
-* **Technical leadership** – End-to-end architecture that scales cleanly
-* **AI integration** – Embed practical machine learning into user-facing and infrastructure layers
+## What I'm Working On
 
----
+**Home Lab Infrastructure** — I recently deployed a two-node K3s cluster over Tailscale, running n8n for workflow automation. The setup lets me access self-hosted services from anywhere without exposing ports or managing VPNs. Next up: a job search automation agent that scrapes postings, scores them against my profile, and queues matches for review.
+
+**Bun Stack** — A fullstack framework that gets you from idea to production in 30 seconds. Bun runtime, React, TypeScript, Drizzle ORM, auth, admin panel, and one-command deploy to Railway. I built it because I was tired of the boilerplate tax on every new project.
+
+**Local AI Infrastructure** — Self-hosted LLM setup using Open WebUI and Ollama on bare metal Ubuntu. Runs inference locally with custom APIs, cutting cloud AI costs by 60%+.
 
 ## Background
 
-My path began in **medical device quality engineering**, where system failures weren’t options.
-That experience shaped my approach to software: risk-aware, outcome-driven, and built for scale.
-I didn’t pivot to tech — I translated regulated systems thinking into developer platforms.
+I spent 10+ years in medical device quality engineering, where system failures meant FDA warning letters and product recalls. That experience shaped how I think about software: understand failure modes, build in observability, and design systems that degrade gracefully.
 
----
+I didn't pivot to tech — I translated regulated systems thinking into software engineering. Root cause analysis becomes debugging methodology. Validation protocols become test coverage. Risk management becomes reliability engineering.
 
 ## Tech Stack
 
-* **Frontend:** React, TypeScript, Tailwind
-* **Backend:** Bun.js, SQLite/Postgres, Drizzle ORM
-* **Infra:** CI/CD, Docker, Railway
-* **AI:** Local-first LLMs via Open WebUI, Ollama, and custom orchestration
+**Languages:** TypeScript, Python, Go, SQL
 
-I use proven technologies that reduce time-to-value — so teams can focus on building, not debugging.
+**Frontend:** React, Vue, Tailwind, VitePress
 
----
+**Backend:** Bun.js, Node, Flask, Gin
 
-## Looking Ahead
+**Data:** PostgreSQL, SQLite, Drizzle ORM, Elasticsearch
 
-I'm targeting roles where **strategic clarity meets technical execution**:
+**Infrastructure:** K3s, Docker, Tailscale, Railway, CI/CD pipelines
 
-* **Technical Product Manager** – Understand the problem, define the vision, ship the solution
-* **Solutions Engineer** – Rapidly build working systems to close deals and drive adoption
-* **VP Engineering** – Architect the platform, lead the team, scale the system
+**AI/ML:** Ollama, Open WebUI, scikit-learn, local-first LLM deployment
 
-Most effective in fast-moving companies that need leverage, not just velocity.
+## What I'm Looking For
 
----
+Full-stack or backend engineering roles at small-to-mid-sized companies building developer tools, infrastructure, or platforms. I work well in environments that value shipping over process theater and evaluate people on output rather than credentials.
 
-> I'm here to identify problems worth solving — and build the systems that solve them.
-> Then open-source the leverage.
+Interested in: observability, workflow automation, compliance-as-code, developer experience, and anything that makes engineers more productive.
+
+Remote preferred. Based in Philadelphia.
+
+## Elsewhere
+
+- [GitHub](https://github.com/jasencarroll)
+- [LinkedIn](https://linkedin.com/in/jasenc)
